@@ -3,13 +3,13 @@
 # cutoff = $1
 
 # download file and sort it
-curl -o pageviews-20161011-160000.z "https://dumps.wikimedia.org/other/pageviews/2016/2016-10/pageviews-20161011-160000.gz"
-gunzip pageviews-20161011-160000.z
-grep ^en pageviews-20161011-160000 > en.pagecounts
-cut -f4 -d" " en.pagecounts | paste - en.pagecounts | sort -nr > en.pagecounts.sorted
+curl -o pagecounts-20160701-000000.gz "https://dumps.wikimedia.org/other/pagecounts-raw/2016/2016-07/pagecounts-20160701-000000.gz"
+gunzip pagecounts-20160701-000000.gz
+grep ^en pagecounts-20160701-000000 > en.pagecounts1
+cut -f4 -d" " en.pagecounts1 | paste - en.pagecounts1 | sort -nr > en.pagecounts.sorted1
 
-# iterate through and eliminate pages with under # views
-# while read line
-# do 
-#    echo "${line}"
-# done <en.pagecounts.sorted
+# download file and sort it
+curl -o pagecounts-20160716-000000.gz "https://dumps.wikimedia.org/other/pagecounts-raw/2016/2016-07/pagecounts-20160716-000000.gz"
+gunzip pagecounts-20160716-000000.gz
+grep ^en pagecounts-20160716-000000 > en.pagecounts2
+cut -f4 -d" " en.pagecounts2 | paste - en.pagecounts2 | sort -nr > en.pagecounts.sorted2
