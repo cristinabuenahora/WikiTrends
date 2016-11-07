@@ -1,14 +1,15 @@
 <!-- views/pages/index.ejs -->
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <% include /partials/head %>
+    <% include partials/head %>
 </head>
 <body class="container">
 
     <header>
-        <% include /partials/header %>
+        <% include partials/header %>
     </header>
 
     <main>
@@ -16,15 +17,17 @@
             <h1>Trending News:</h1>
             <h2>WikiPages</h2>
             <ul>
-              <% for wikiPage in wikiPages { %>
-                <div><%= wikiPage.name %></div>
+              <% for (var i = 0; i < numberOfPages; i++) { %>
+              <p>
+                  <%= wikiPageNames[i] %>
+              </p>
               <% } %>
             </ul>
         </div>
     </main>
 
     <footer>
-        <% include /partials/footer %>
+        <% include partials/footer %>
     </footer>
 
 </body>
