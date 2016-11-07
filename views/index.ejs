@@ -1,0 +1,31 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include /partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include /partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Trending News:</h1>
+            <h2>WikiPages</h2>
+            <ul>
+              <% for wikiPage in wikiPages { %>
+                <div><%= wikiPage.name %></div>
+              <% } %>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <% include /partials/footer %>
+    </footer>
+
+</body>
+</html>
