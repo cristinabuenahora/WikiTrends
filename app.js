@@ -15,9 +15,10 @@ app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
+app.set('view engine', 'ejs'); 
 
 // routes ======================================================================
-require('./app/routes.js')(app);
+require('./routes/routes.js')(app);
 
 // listen (start app with node server.js) ======================================
 app.listen(port);
