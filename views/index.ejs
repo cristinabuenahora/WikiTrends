@@ -8,16 +8,9 @@
 </head>
 <body class="container">
   <div class="main">
-    <div class="row">
-      <div class="six columns">
-        <h2 class="title">WikiTrends</h2>
-      </div>
-      <div class="six columns" style="margin-top:8px">
-        <!--<a href="#" class="button">WikiTrends</a>-->
-        <a href="/" class="navbutton">Home</a>
-        <a href="/about" class="navbutton">About</a>
-      </div>
-    </div>
+    <header>
+      <% include partials/header %>
+    </header>
     <div class="row">
       <ul>
         <% for (var i = 0; i < numberOfPages; i++) { %>
