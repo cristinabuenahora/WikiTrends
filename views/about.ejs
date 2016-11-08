@@ -1,31 +1,27 @@
 <!-- views/pages/about.ejs -->
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <% include partials/head %>
 </head>
 <body class="container">
+  <div class="main">
     <header>
       <% include partials/header %>
     </header>
-    <main>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="jumbotron">
-            <h1>Senior Design Project</h1>
-              <p>Goal: Find and analyse spikes in Wikipedia page count data to create a completely unbiased news source across different languages.</p>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="well">
-            <h3>Look I'm A Sidebar!</h3>
-          </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="jumbotron">
+          <h1>Senior Design Project</h1>
+            <p>Goal: Find and analyse spikes in Wikipedia page count data to create a completely unbiased news source across different languages.</p>
         </div>
       </div>
-    </main>
-    <footer>
-      <% include partials/footer %>
-    </footer>
+    </div>
+  <footer>
+    <% include partials/footer %>
+  </footer>
+  </div>
 </body>
 </html>
