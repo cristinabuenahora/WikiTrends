@@ -7,28 +7,28 @@
     <% include partials/head %>
 </head>
 <body class="container">
-
-    <header>
-        <% include partials/header %>
-    </header>
-
-    <main>
-        <div class="jumbotron">
-            <h1>Trending News:</h1>
-            <h2>WikiPages</h2>
-            <ul>
-              <% for (var i = 0; i < numberOfPages; i++) { %>
-              <p>
-                  <%= wikiPageNames[i] %>
-              </p>
-              <% } %>
-            </ul>
+  <div class="row">
+    <div class="eleven columns" style="margin-top: 10%">
+      <h2>WikiTrends</h2>
+      <div class="navbar">
+        <a href="#" class="button">WikiTrends</a>
+        <a href="/" class="button">Home</a>
+        <a href="/about" class="button">About</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h4>Top Pages</h4>
+    <ul>
+      <% for (var i = 0; i < numberOfPages; i++) { %>
+        <div class="card">
+          <p><%= wikiPageNames[i] %></p>
         </div>
-    </main>
-
-    <footer>
-        <% include partials/footer %>
-    </footer>
-
+      <% } %>
+    </ul>
+  </div>
+  <footer>
+    <% include partials/footer %>
+  </footer>
 </body>
 </html>

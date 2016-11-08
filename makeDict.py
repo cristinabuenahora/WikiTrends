@@ -14,18 +14,22 @@ def main():
     seen = {}
     for line in f:
       splits = line.split()
-      title = splits[1].strip()
-      views = splits[2].strip()
-      if title not in d:
-        d[title] = []
-      if title not in seen:
-        d[title].append(views)
-        seen[title] = True
-      else:
-        l = len(d[title]) - 1
-        currCount = d[title][l]
-        d[title][l] = str(int(currCount) + int(views))
- 
+      try:
+        title = splits[1].strip()
+        views = splits[2].strip()
+        if title not in d:
+          d[title] = []
+        if title not in seen:
+          d[title].append(views)
+          seen[title] = True
+        else:
+          l = len(d[title]) - 1
+          currCount = d[title][l]
+          d[title][l] = str(int(currCount) + int(views))
+      except:
+        x = 1
+
+
   s = ''
   for title in d:
     s += title + '\t'
