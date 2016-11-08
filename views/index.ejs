@@ -7,28 +7,27 @@
     <% include partials/head %>
 </head>
 <body class="container">
-  <div class="row">
-    <div class="eleven columns" style="margin-top: 10%">
-      <h2>WikiTrends</h2>
-      <div class="navbar">
-        <a href="#" class="button">WikiTrends</a>
-        <a href="/" class="button">Home</a>
-        <a href="/about" class="button">About</a>
+  <div class="main">
+    <div class="row">
+      <div class="six columns">
+        <h2 class="title">WikiTrends</h2>
+      </div>
+      <div class="six columns" style="margin-top:8px">
+        <!--<a href="#" class="button">WikiTrends</a>-->
+        <a href="/" class="navbutton">Home</a>
+        <a href="/about" class="navbutton">About</a>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <h4>Top Pages</h4>
-    <ul>
-      <% for (var i = 0; i < numberOfPages; i++) { %>
-        <div class="card">
-          <p><%= wikiPageNames[i] %></p>
-        </div>
-      <% } %>
-    </ul>
-  </div>
+    <div class="row">
+      <ul>
+        <% for (var i = 0; i < numberOfPages; i++) { %>
+          <p class="card"><%= wikiPageNames[i] %></p>
+        <% } %>
+      </ul>
+    </div>
   <footer>
     <% include partials/footer %>
   </footer>
+  </div>
 </body>
 </html>
