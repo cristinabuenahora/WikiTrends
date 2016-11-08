@@ -13,3 +13,7 @@ Process:
 1. Use dictMaker.py to create a file with pagename '\t' count1 count2 ..... 
 2. Use spikeFinder.py to find spikes in the dictMaker output
 
+Done:
+Backend
+- Script to find the views everyday for a whole month
+- Working on script to find the spikes for the month
