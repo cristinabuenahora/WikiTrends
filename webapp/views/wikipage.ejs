@@ -1,4 +1,4 @@
-<!-- views/pages/index.ejs -->
+<!-- views/wikipage.ejs -->
 
 <!DOCTYPE html>
 
@@ -11,15 +11,6 @@
     <header>
       <% include partials/header %>
     </header>
-    <div class="row">
-      <ul>
-        <% for (var i = 0; i < numberOfPages; i++) { %>
-          <a href="/wikipage">
-          <p class="card"><%= wikiPageNames[i] %></p>
-          </a>
-        <% } %>
-      </ul>
-    </div>
   <footer>
     <% include partials/footer %>
   </footer>
