@@ -8,8 +8,11 @@ Advisor: Professor Chris Callison-Burch
 
 Goal: Find and analyse spikes in Wikipedia page count data to create a completely unbiased news source across different languages.
 
+Usages:
 downloadDay.sh 10 15 (downloads oct 15)
+
 downloadMonth.sh 10 (downloads oct)
+
 Both files download unzipped pages into pageviews/ and then the english parts to enpageviews/. 
 
 WebApp:
@@ -24,3 +27,7 @@ Done:
 Backend
 - Script to find the views everyday for a whole month
 - Working on script to find the spikes for the month
+
+TODO:
+* Write spikeFinder.py, vary num days averaged
+* Download a small chunk of files to test spikeFinder.py
