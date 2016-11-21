@@ -3,14 +3,16 @@ import sys
 import os
 
 '''
-Creates a dictionary of pagename '\t' count1 count2 count3 from the data in enpageviews directory
+Creates a dictionary of pagename '\t' count1 count2 count3 from the data in directory passed in
+arg1 is the directory to make into a count
+should be captured in a file in that directory
 '''
 
 def main():
  
   d = {}
-  for filename in os.listdir('enpageviews'):
-    f = open('enpageviews/' + filename)
+  for filename in os.listdir(sys.argv[1]):
+    f = open(sys.argv[1] + "/" + filename)
     seen = {}
     for line in f:
       splits = line.split()
