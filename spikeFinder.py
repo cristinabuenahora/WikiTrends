@@ -32,7 +32,7 @@ def main():
           
         # check if the difference is above a certain percent change and actual value
         diff = avg2 - avg1
-        if (diff > avg1 * 1.5 and diff > 500):
+        if (diff > 800):
           # if it is then print the name and the difference
           print pagename + '\t' + str(diff)
 
