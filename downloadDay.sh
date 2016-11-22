@@ -6,9 +6,11 @@
 
 fullfile="pageviews-2016"$1$2
 
-for hour in "000000" "060000" "120000" "180000"
+hours=("00" "01" "02" "03" "04" "05" "06" "07" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23")
+
+for hour in ${hours[*]} 
 do
-  file=$fullfile"-"$hour
+  file=$fullfile"-"$hour"0000"
   url="https://dumps.wikimedia.org/other/pageviews/2016/2016-"$1/$file.gz
   wget $url -O "pageviews/"$file.gz
   gunzip "pageviews/"$file.gz
