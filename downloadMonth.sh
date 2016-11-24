@@ -19,12 +19,12 @@ done
 
 for day in "15" "16" "17" "18" "19" "20" "21"
 do
-  bash downloadDay.sh $1 03 1
+  bash downloadDay.sh $1 $day 3
 done
 
 for day in "22" "23" "24" "25" "26" "27" "28"
 do
-  bash downloadDay.sh $1 03 1
+  bash downloadDay.sh $1 $day 4
 done
 
 
