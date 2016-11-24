@@ -71,3 +71,7 @@
   word-wrap: normal;
   height: auto;
 }
+
+.footer {
+  padding: 10px; 
+}

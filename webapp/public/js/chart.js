@@ -5,14 +5,20 @@ function drawChart() {
 	// create data chart 
 	var data = new google.visualization.DataTable();
 
+    /*var reader = new FileReader(); 
 	// read in data from text file 
-	$.ajax({url: 'data/test.txt', type: 'POST'}).success(
+    reader.onload = function(e) {
+        console.log(reader.result); 
+    }
+    reader.readAsText('test.txt'); */ 
+
+	/*$.ajax({url: 'data/test.txt', type: 'POST'}).success(
         function (data, status, headers, config) {
 			console.log(data); 
 			console.log(status); 
 			console.log(headers); 
 			console.log(config); 
-		}
+		}*/ 
             /*stat_data = JSON.parse(stat_data);
 
             var options = {
@@ -27,7 +33,20 @@ function drawChart() {
 
             chart.draw(data, options);
         }*/ 
-    );
+    //);
+
+      /*var jsonData = $.ajax({
+          url: "getData.php",
+          dataType: "json",
+          async: false
+          }).responseText;
+          
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(jsonData);
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, {width: 400, height: 240});*/ 
 
     data.addColumn('number', 'Pageviews');
     data.addColumn('number', 'Guardians of the Galaxy');
