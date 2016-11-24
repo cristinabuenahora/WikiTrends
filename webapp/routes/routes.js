@@ -3,8 +3,9 @@ var fs = require('fs');
 module.exports = function(app) {
 
 	// application -------------------------------------------------------------
+
 	app.get('/', function(req, res) {
-			var pageNames = fs.readFileSync('test.txt').toString('utf8').split('\n');
+			var pageNames = fs.readFileSync('public/data/test.txt').toString('utf8').split('\n');
 			var numPages = pageNames.length;
 
 			res.render('index', {

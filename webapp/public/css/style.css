@@ -6,6 +6,9 @@
 .title {
   color: #1d224c;
   font-weight:500;
+  font-size: 44px;
+  padding: 10px;
+  text-decoration-line: none;
 }
 
 .main {
@@ -28,11 +31,6 @@
   /*box-shadow: 10px 10px 5px #888;*/
   cursor: pointer;
   box-sizing: border-box;
-}
-
-.title {
-  font-size: 44px;
-  padding: 10px;
 }
 
 .navbutton {
