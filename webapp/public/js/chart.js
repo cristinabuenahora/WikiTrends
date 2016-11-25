@@ -3,7 +3,7 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
 	// create data chart 
-	var data = new google.visualization.DataTable();
+	//var data = new google.visualization.DataTable();
 
     /*var reader = new FileReader(); 
 	// read in data from text file 
@@ -35,20 +35,22 @@ function drawChart() {
         }*/ 
     //);
 
-      /*var jsonData = $.ajax({
-          url: "getData.php",
-          dataType: "json",
-          async: false
-          }).responseText;
+    var jsonData = $.ajax({
+        url: "../getData.php",
+        dataType: "json",
+        async: false
+    }).responseText;
           
+    console.log(jsonData); 
+
       // Create our data table out of JSON data loaded from server.
       var data = new google.visualization.DataTable(jsonData);
 
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-      chart.draw(data, {width: 400, height: 240});*/ 
+      chart.draw(data, {width: 400, height: 240}); 
 
-    data.addColumn('number', 'Pageviews');
+    /*data.addColumn('number', 'Pageviews');
     data.addColumn('number', 'Guardians of the Galaxy');
 	data.addColumn('number', 'The Avengers');
     data.addColumn('number', 'Transformers: Age of Extinction');
@@ -80,7 +82,7 @@ function drawChart() {
 
     var chart = new google.charts.Line(document.getElementById('chart_div'));
 
-    chart.draw(data, options);
+    chart.draw(data, options); */ 
 
 	/*
 	$.ajax({url: stats_cgi, type: 'POST'}).success(
