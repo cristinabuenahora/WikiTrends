@@ -9,6 +9,7 @@
   font-size: 44px;
   padding: 10px;
   text-decoration-line: none;
+  vertical-align: middle; 
 }
 
 .header {
@@ -17,6 +18,24 @@
   font-size: 30px;
   padding: 10px;
   text-decoration-line: none;
+  padding-top: 10px; 
+}
+
+.logo img {
+  float: left; 
+  width: 20%; 
+  height: 20%; 
+}
+
+.logo h1 {
+  color: #1d224c;
+  font-weight:500;
+  font-size: 44px;
+  padding: 10px;
+  text-decoration-line: none;
+  position: relative;
+  word-wrap: normal;
+  vertical-align: middle; 
 }
 
 .main {
@@ -53,7 +72,7 @@
   text-decoration: none;
 }
 
-.navbutton {
+div .navbutton {
   display: inline-block;
   height: 38px;
   padding: 0 20px;
@@ -92,9 +111,19 @@
   height: auto;
 }
 
-.text {
+div .text {
   width: 100%;
-  word-wrap: normal; 
+  word-wrap: normal;
+  word-break: normal;
+}
+
+.difimg {
+  width: 5%; 
+  height: 5%; 
+  text-align: center; 
+  word-wrap: normal;
+  vertical-align: middle; 
+  padding: 5px; 
 }
 
 .footer {
