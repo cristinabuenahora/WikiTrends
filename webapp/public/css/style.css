@@ -11,6 +11,14 @@
   text-decoration-line: none;
 }
 
+.header {
+  color: #1d224c;
+  font-weight:500;
+  font-size: 30px;
+  padding: 10px;
+  text-decoration-line: none;
+}
+
 .main {
   background-color: #fff;
   margin-top: 10%;
@@ -31,6 +39,7 @@
   /*box-shadow: 10px 10px 5px #888;*/
   cursor: pointer;
   box-sizing: border-box;
+  word-wrap: normal; 
 }
 
 .row a {
@@ -81,6 +90,11 @@
   box-sizing: border-box;
   word-wrap: normal;
   height: auto;
+}
+
+.text {
+  width: 100%;
+  word-wrap: normal; 
 }
 
 .footer {
