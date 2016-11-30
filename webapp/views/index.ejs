@@ -14,10 +14,8 @@
     <div class="row">
       <ul>
         <% for (var i = 0; i < numberOfPages - 1; i++) { %>
-          <a href="/wikipage">
-          <p class="card" onclick="wikipage()">
-            <%= wikiPageNames[i] %>
-          </p>
+          <a href="/wikipage" id="wikipage<%=i%>">
+            <p class="card"><%= wikiPageNames[i] %></p>
           </a>
         <% } %>
       </ul>

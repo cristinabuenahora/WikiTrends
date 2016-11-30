@@ -1,10 +1,10 @@
 Stroud_railway_station	3 1 5 6
-ATP–ADP_translocase	3 3 3 8 
+ATP–ADP_translocase	3 3 3 8
 Alys	1 1 3 4
 NBA_Street_Vol._2	3 7 6 3
-JL-9	1 1 1 1 
+JL-9	1 1 1 1
 Basilica_of_St._Louis_de_Montfort	1 1 0 2
 Gettysburg_(film)	1 4 5 6
 Atlético_Celaya	1 1 3 4
 Cloncurry_River	1 3 4 2
-Neil_Kinnock	17 7 8 22 
+Neil_Kinnock	17 7 8 22

@@ -1,108 +1,48 @@
-google.charts.load('current', {'packages':['line']});
-google.charts.setOnLoadCallback(drawChart);
+console.log('in chart.js'); 
 
-function drawChart() {
-	// create data chart 
-	//var data = new google.visualization.DataTable();
+$.get( "/getData", function(data) {
+    pageData = data.pageData;
+    console.log(pageData); 
 
-    /*var reader = new FileReader(); 
-	// read in data from text file 
-    reader.onload = function(e) {
-        console.log(reader.result); 
-    }
-    reader.readAsText('test.txt'); */ 
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
 
-	/*$.ajax({url: 'data/test.txt', type: 'POST'}).success(
-        function (data, status, headers, config) {
-			console.log(data); 
-			console.log(status); 
-			console.log(headers); 
-			console.log(config); 
-		}*/ 
-            /*stat_data = JSON.parse(stat_data);
+    function drawChart() {
+        // create data chart 
+        var data = new google.visualization.DataTable();
 
-            var options = {
-              title: 'Average Wait Times by Day',
-              legend: { position: 'bottom' },
-                vAxis: {title: 'Wait time in Minutes'}
-            };
-
-            var data = google.visualization.arrayToDataTable(stat_data['average_wait_times']);
-
-            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-            chart.draw(data, options);
-        }*/ 
-    //);
-
-    var jsonData = $.ajax({
-        url: "../getData.php",
-        dataType: "json",
-        async: false
-    }).responseText;
-          
-    console.log(jsonData); 
-
-      // Create our data table out of JSON data loaded from server.
-      var data = new google.visualization.DataTable(jsonData);
-
-      // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-      chart.draw(data, {width: 400, height: 240}); 
-
-    /*data.addColumn('number', 'Pageviews');
-    data.addColumn('number', 'Guardians of the Galaxy');
-	data.addColumn('number', 'The Avengers');
-    data.addColumn('number', 'Transformers: Age of Extinction');
-
-    data.addRows([
-        [1,  37.8, 80.8, 41.8],
-        [2,  30.9, 69.5, 32.4],
-        [3,  25.4,   57, 25.7],
-        [4,  11.7, 18.8, 10.5],
-        [5,  11.9, 17.6, 10.4],
-        [6,   8.8, 13.6,  7.7],
-        [7,   7.6, 12.3,  9.6],
-        [8,  12.3, 29.2, 10.6],
-        [9,  16.9, 42.9, 14.8],
-        [10, 12.8, 30.9, 11.6],
-        [11,  5.3,  7.9,  4.7],
-        [12,  6.6,  8.4,  5.2],
-        [13,  4.8,  6.3,  3.6],
-        [14,  4.2,  6.2,  3.4]
-    ]);
-
-    var options = {
-    	chart: {
-        	title: 'Box Office Earnings in First Two Weeks of Opening',
-          	subtitle: 'in millions of dollars (USD)'
-        },
-        height: 400
-    };
-
-    var chart = new google.charts.Line(document.getElementById('chart_div'));
-
-    chart.draw(data, options); */ 
-
-	/*
-	$.ajax({url: stats_cgi, type: 'POST'}).success(
-        function (stat_data, status, headers, config) {
-
-            stat_data = JSON.parse(stat_data);
-
-            var options = {
-              title: 'Average Wait Times by Day',
-              legend: { position: 'bottom' },
-                vAxis: {title: 'Wait time in Minutes'}
-            };
-
-            var data = google.visualization.arrayToDataTable(stat_data['average_wait_times']);
-
-            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-            chart.draw(data, options);
+        // add columns
+        data.addColumn('number', 'Pageviews');
+        var pageCounts = []; 
+        for (var i = 0; i < pageData.length - 1; i++) {
+            var pageName = pageData[i].split('\t')[0];
+            pageName = pageName.split('_').join(' ');
+            data.addColumn('number', pageName); 
+            pageCounts.push(pageData[i].split('\t')[1].split(' ')); 
         }
-    );
-	*/ 
 
-}
+        // add rows 
+        rows = []; 
+        for (var i = 0; i < 4; i++) {
+            row = [i]; 
+            for (var j = 0; j < pageData.length - 1; j++) {
+                row.push(parseInt(pageCounts[j][i])); 
+            }
+            rows.push(row); 
+        }
+        console.log(rows); 
+        data.addRows(rows); 
+
+        var options = {
+            chart: {
+                title: 'Box Office Earnings in First Two Weeks of Opening'
+            },
+            height: 400
+        };
+
+        var chart = new google.charts.Line(document.getElementById('chart_div'));
+
+        chart.draw(data, options); 
+
+    }
+});

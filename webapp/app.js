@@ -19,7 +19,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
 app.use(cookieParser());
-app.use(session({secret: "aasif"}));
+app.use(session({secret: "wikipages"}));
 app.set('view engine', 'ejs');
 
 // routes ======================================================================
