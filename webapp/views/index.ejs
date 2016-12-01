@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <head>
     <% include partials/head %>
 </head>
@@ -13,9 +15,9 @@
     </header>
     <div class="row">
       <ul>
-        <% for (var i = 0; i < numberOfPages; i++) { %>
-          <a href="/wikipage">
-          <p class="card"><%= wikiPageNames[i] %></p>
+        <% for (var i = 0; i < numberOfPages - 1; i++) { %>
+          <a href="/wikipage?<%=i%>" id="wikipage<%=i%>">
+            <p class="card"><%= wikiPageNames[i] %></p>
           </a>
         <% } %>
       </ul>
