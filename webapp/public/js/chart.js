@@ -1,8 +1,8 @@
-console.log('in chart.js'); 
+//console.log('in chart.js'); 
 
 $.get( "/getData", function(data) {
-    pageData = data.pageData;
-    console.log(pageData); 
+    var pageData = data.pageData;
+    var id = parseInt(window.location.href.split('?')[1]); 
 
     google.charts.load('current', {'packages':['line']});
     google.charts.setOnLoadCallback(drawChart);
@@ -10,9 +10,6 @@ $.get( "/getData", function(data) {
     function drawChart() {
         // create data chart 
         var data = new google.visualization.DataTable();
-
-        var id = parseInt(window.location.href.split('?')[1]); 
-        console.log(id); 
 
         // add columns
         data.addColumn('number', 'Pageviews');
@@ -28,7 +25,6 @@ $.get( "/getData", function(data) {
             row.push(parseInt(pageCounts[i]));
             rows.push(row); 
         }
-        console.log(rows); 
         data.addRows(rows); 
         
         /*
@@ -54,9 +50,17 @@ $.get( "/getData", function(data) {
 
         var options = {
             chart: {
-                title: pageName
+                title: pageName,
+                titleTextStyle: {
+                    color: '#1d224c', 
+                    fontSize: 30,
+                    bold: true 
+                }
             },
-            height: 400
+            legend: { 
+                position: 'none'
+            }, 
+            colors: ['#1d224c']
         };
 
         var chart = new google.charts.Line(document.getElementById('chart_div'));

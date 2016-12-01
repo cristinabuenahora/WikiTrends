@@ -154,6 +154,12 @@ div .text {
   padding: 5px; 
 }
 
+.chart {
+  width: 80%; 
+  height: 400px; 
+  margin: auto;
+}
+
 .footer {
   padding: 10px; 
 }
