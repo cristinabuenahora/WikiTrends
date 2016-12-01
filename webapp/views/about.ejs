@@ -11,7 +11,6 @@
     <header>
       <% include partials/header %>
     </header>
-    <br>
     <div class="row">
       <h1 class="header">Mission</h1>
       <div class="aboutcard">
@@ -19,13 +18,20 @@
       </div>
       <br>
       <h1 class="header">Differentiators</h1>
-      <div class="aboutcard">
-        <img class="difimg" src="images/dif1.png">  Based on searches trending worldwide, not personalized to user</img>
-        <br>
-        <img class="difimg" src="images/dif2.png">  Based on Wikipedia articles, which is factual information</img>
-        <br>
-        <img class="difimg" src="images/dif3.png">  Follows Wikipedia's motivation of educating people under a free license</img> 
-      </div>
+        <div class="aboutcard">
+          <table class="abouttable">
+            <tr>
+              <th><img class="difimg" src="images/dif1.png"></th>
+              <th><img class="difimg" src="images/dif2.png"></th>
+              <th><img class="difimg" src="images/dif3.png"> </th>
+            </tr>
+            <tr>
+              <td class="text">Based on searches trending worldwide, not personalized to user</td>
+              <td class="text">Based on Wikipedia articles, which is factual information</td>
+              <td class="text">Follows Wikipedia's motivation of educating people under a free license</td>
+            </tr>
+          </table>
+        </div>
     </div>
   <footer>
     <% include partials/footer %>

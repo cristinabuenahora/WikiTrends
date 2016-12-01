@@ -12,16 +12,22 @@ $.get( "/getData", function(data) {
         var data = new google.visualization.DataTable();
 
         // add columns
-        data.addColumn('number', 'Pageviews');
+        data.addColumn('string', 'Pageviews');
+
+        // add pageName
         var pageName = pageData[id].split('\t')[0];
         pageName = pageName.split('_').join(' ');
+        document.getElementById('pageName').innerHTML += pageName; 
+
+
         data.addColumn('number', pageName); 
-        var pageCounts = pageData[id].split('\t')[1].split(' '); 
+        var pageCounts = pageData[id].split('\t')[1].split(' ');
+        var description =  pageData[id].split('\t')[2];
 
         rows = []; 
-        for (var i = 0; i < pageCounts.length; i++) {
+        for (var i = 0; i < pageCounts.length - 1; i++) {
             var row = []; 
-            row.push(i);
+            row.push('Nov ' + (i + 1));
             row.push(parseInt(pageCounts[i]));
             rows.push(row); 
         }
@@ -49,14 +55,14 @@ $.get( "/getData", function(data) {
         data.addRows(rows); */ 
 
         var options = {
-            chart: {
+            /*chart: {
                 title: pageName,
                 titleTextStyle: {
                     color: '#1d224c', 
                     fontSize: 30,
                     bold: true 
                 }
-            },
+            },*/ 
             legend: { 
                 position: 'none'
             }, 
@@ -66,5 +72,7 @@ $.get( "/getData", function(data) {
         var chart = new google.charts.Line(document.getElementById('chart_div'));
         chart.draw(data, options); 
 
+        // add description
+        document.getElementById('description').innerHTML += description; 
     }
 });

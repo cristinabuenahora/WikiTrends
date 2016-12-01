@@ -1,10 +1,13 @@
-Stroud_railway_station	3 1 5 6
-ATP–ADP_translocase	3 3 3 8
-Alys	1 1 3 4
-NBA_Street_Vol._2	3 7 6 3
-JL-9	1 1 1 1
-Basilica_of_St._Louis_de_Montfort	1 1 0 2
-Gettysburg_(film)	1 4 5 6
-Atlético_Celaya	1 1 3 4
-Cloncurry_River	1 3 4 2
-Neil_Kinnock	17 7 8 22
+Donald_Trump	122981 148866 184345 169567 206884 293586 1010305 3573814 1326888 	Donald John Trump is an American businessman, actor, author, politician, and the President-elect of the United States. Elected on November 8, 2016, his presidential transition is underway towards a scheduled inauguration on January 20, 2017.
+United_States_presidential_election 2016	108571 124807 134000 142464 221638 396142 1305051 1206496 529963 	The United States presidential election of 2016 was the 58th and most recent quadrennial American presidential election, held on Tuesday, November 8, 2016.
+Electoral_College_(United_States)	58488 82623 81306 90483 98968 245428 1595148 587919 134760	The United States Electoral College is a mechanism established by Article Two of the United States Constitution in the indirect United States presidential election system to select the President of the United States and Vice President of the United States.
+Melania_Trump	19012 23525 136304 76796 72733 61439 235128 1093595 307755	Melania Trump is a Slovene-born American former model who is married to American businessman and President-elect of the United States, Donald Trump.
+United_States_presidential_election 2012	39676 47517 49541 55133 63373 124184 810972 587721 135067 	Blue denotes those won by Obama/Biden, red denotes states won by Romney/Ryan. Numbers indicate electoral votes allotted to the winner of each state. The United States presidential election of 2012 was the 57th quadrennial American presidential election. It was held on Tuesday, November 6, 2012.
+Hillary_Clinton	78167 90169 106743 98845 125910 208475 638989 706497 236498 	Hillary Diane Rodham Clinton is an American politician who was the 67th United States Secretary of State from 2009 to 2013, U.S. Senator from New York from 2001 to 2009, and First Lady of the United States from 1993 to 2001
+Meghan_Markle	119937 217235 115058 68664 53136 43298 922667 145138 87609	Rachel Meghan Markle is an American actress. Best known for her role as Rachel Zane on the TV legal drama Suits, she also played FBI special agent Amy Jessup in the sci-fi thriller Fringe.
+List_of_Presidents_of_the_United_States	46967 51978 55330 59080 67990 105628 330176 479559 164006 	Of the individuals elected as president, four died in office of natural causes (William Henry Harrison, Zachary Taylor, Warren G. Harding, and Franklin D. Roosevelt), four were assassinated (Abraham Lincoln, James A. Garfield, William McKinley, and John F. Kennedy), and one resigned (Richard Nixon).
+Ivanka_Trump	17682 23398 40307 43206 50580 51374 174007 538946 170668 	Ivanka Marie Trump is an American businesswoman and former fashion model. She is the daughter of real estate developer and President-elect of the United States, Donald Trump and former model Ivana Trump.
+United_States_presidential_election 2008	23529 28636 29885 34021 38436 78452 406882 377682 86018 	The United States presidential election of 2008 was the 56th quadrennial presidential election. It was held on Tuesday, November 4, 2008. Democratic Party nominee Senator Barack Obama and running mate Senator Joe Biden defeated Republican Party nominee Senator John McCain and running mate Governor Sarah Palin.
+Barack_Obama	45760 53582 58892 62678 70293 102888 306589 462108 178087 	Barack Hussein Obama II is an American politician who is the 44th and current President of the United States. He is the first African American to be elected to office and the first president born outside the continental United States.
+Ivana_Trump 	13414 16378 34221 29923 37018 37401 138549 471587 145315 	Ivana Marie Trump is a Czech-American businesswoman, author, socialite, and former fashion model. She was the first wife of President-elect of the United States Donald Trump.
+Tiffany_Trump	13496 16674 26576 28029 33591 35197 133713 408302 132183 	Tiffany Ariana Trump is an American internet personality, singer and model. She is the daughter of the President-elect of the United States, Donald Trump, and his second wife Marla Maples.
