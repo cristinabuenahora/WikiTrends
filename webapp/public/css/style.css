@@ -21,10 +21,16 @@
   padding-top: 10px; 
 }
 
+.logo {
+  display: flex; 
+  align-self: center; 
+  align-content: center; 
+}
+
 .logo img {
   float: left; 
-  width: 20%; 
-  height: 20%; 
+  width: 12%; 
+  height: 12%; 
 }
 
 .logo h1 {

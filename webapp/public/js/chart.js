@@ -11,8 +11,27 @@ $.get( "/getData", function(data) {
         // create data chart 
         var data = new google.visualization.DataTable();
 
+        var id = parseInt(window.location.href.split('?')[1]); 
+        console.log(id); 
+
         // add columns
         data.addColumn('number', 'Pageviews');
+        var pageName = pageData[id].split('\t')[0];
+        pageName = pageName.split('_').join(' ');
+        data.addColumn('number', pageName); 
+        var pageCounts = pageData[id].split('\t')[1].split(' '); 
+
+        rows = []; 
+        for (var i = 0; i < pageCounts.length; i++) {
+            var row = []; 
+            row.push(i);
+            row.push(parseInt(pageCounts[i]));
+            rows.push(row); 
+        }
+        console.log(rows); 
+        data.addRows(rows); 
+        
+        /*
         var pageCounts = []; 
         for (var i = 0; i < pageData.length - 1; i++) {
             var pageName = pageData[i].split('\t')[0];
@@ -31,17 +50,16 @@ $.get( "/getData", function(data) {
             rows.push(row); 
         }
         console.log(rows); 
-        data.addRows(rows); 
+        data.addRows(rows); */ 
 
         var options = {
             chart: {
-                title: 'Box Office Earnings in First Two Weeks of Opening'
+                title: pageName
             },
             height: 400
         };
 
         var chart = new google.charts.Line(document.getElementById('chart_div'));
-
         chart.draw(data, options); 
 
     }
