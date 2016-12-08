@@ -1,6 +1,6 @@
 //console.log('in chart.js'); 
 
-$.get( "/getData", function(data) {
+$.get( "/getElectionData", function(data) {
     var pageData = data.pageData;
     //var month = data.month; 
     var id = parseInt(window.location.href.split('?')[1]); 
@@ -27,7 +27,7 @@ $.get( "/getData", function(data) {
         rows = []; 
         for (var i = 0; i < pageCounts.length; i++) {
             var row = []; 
-            row.push('Dec ' + (i + 1));
+            row.push('Nov ' + (i + 1));
             row.push(parseInt(pageCounts[i]));
             rows.push(row); 
         }

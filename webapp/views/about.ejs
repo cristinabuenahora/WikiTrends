@@ -32,6 +32,12 @@
             </tr>
           </table>
         </div>
+      <br> 
+      <h1 class="header">Our Algorithm</h1>
+      <div class="aboutcard">
+        <div class="text">The pageview data is publicly stored as a .gz file on a Wikipedia website. We’ve written a couple bash scripts that download all the files for a day, week, or month. The files are automatically downloaded through a cron job and are stored in the NLP grid. After downloading the files, we create a dictionary with the pagename and the aggregated hourly data. Doing so allows us to have the daily pageviews for each page in one object. To find the spikes, we create an average of the previous daily pageviews for that article and compare it to the current days pageviews to determine whether the page had a huge percent increase as well as a numerical increase. The values we’ve determined to be good indicators are a 1.5 percent increase and over 5,000 numerical increase.
+        </div> 
+      </div>
     </div>
   <footer>
     <% include partials/footer %>
