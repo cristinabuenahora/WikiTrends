@@ -1,41 +1,40 @@
 #!/bin/bash
 
-# call downloadDay 
+month=11
+mkdir "/nlp/data/sierray/"$month"12016"
+mkdir "/nlp/data/sierray/"$month"22016"
+mkdir "/nlp/data/sierray/"$month"32016"
+mkdir "/nlp/data/sierray/"$month"42016"
 
-mkdir "/nlp/data/sierray/"$1"12016"
-mkdir "/nlp/data/sierray/"$1"22016"
-mkdir "/nlp/data/sierray/"$1"32016"
-mkdir "/nlp/data/sierray/"$1"42016"
-
-for day in "01" "02" "03" "04" "05" "06" "07" "08" "09"
+for day in "01" "02" "03" "04" "05" "06" "07" 
 do
-  bash downloadDay.sh $1 $day 1
+  bash downloadDay.sh $month $day 1
 done
 
 for day in "08" "09" "10" "11" "12" "13" "14"
 do
-  bash downloadDay.sh $1 $day 2
+  bash downloadDay.sh $month $day 2
 done
 
 for day in "15" "16" "17" "18" "19" "20" "21"
 do
-  bash downloadDay.sh $1 $day 3
+  bash downloadDay.sh $month $day 3
 done
 
 for day in "22" "23" "24" "25" "26" "27" "28"
 do
-  bash downloadDay.sh $1 $day 4
+  bash downloadDay.sh $month $day 4
 done
 
 
-if [ "$1" != "02" ]; then
-  mkdir "data/"$1"5"
-  bash downloadDay.sh $1 29 5
-  bash downloadDay.sh $1 30 5
+if [ "$month" != "02" ]; then
+  mkdir "data/"$month"5"
+  bash downloadDay.sh $month 29 5
+  bash downloadDay.sh $month 30 5
 fi
 
-if [ "$1" = "01" ] || [ "$1" = "03" ] || [ "$1" = "05" ] || [ "$2" = "07" ] || [ "$1" = "08" ] || [ "$1" = "10" ] || [ "$1" == "12" ]; then
-  bash downloadDay.sh $1 31 5 
+if [ "$month" = "01" ] || [ "$month" = "03" ] || [ "$month" = "05" ] || [ "$month" = "07" ] || [ "$month" = "08" ] || [ "$month" = "10" ] || [ "$month" == "12" ]; then
+  bash downloadDay.sh $month 31 5 
 fi
 
 
