@@ -24,13 +24,13 @@
 .logo {
   display: flex; 
   align-self: center; 
-  align-content: center; 
+  align-content: center;
 }
 
 .logo img {
   float: left; 
-  width: 12%; 
-  height: 12%; 
+  width: 18%; 
+  height: 18%; 
 }
 
 .logo h1 {
@@ -102,7 +102,7 @@ div .navbutton {
   padding: 0 30px;
   color: #555;
   text-align: left;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 38px;
   letter-spacing: .1rem;
@@ -117,8 +117,17 @@ div .navbutton {
   height: auto;
 }
 
+.pageName {
+  color: #555;
+  font-weight:500;
+  font-size: 30px;
+  padding: 10px;
+  text-decoration-line: none;
+  padding-top: 10px; 
+  margin-left: 10%; 
+}
 
-.aboutcard {
+.descriptioncard {
   background-color: #efefef;
   padding: 0 30px;
   color: #555;
@@ -143,15 +152,44 @@ div .text {
   word-wrap: normal;
   word-break: normal;
   white-space: normal; 
+  text-align: left; 
+  vertical-align: top; 
+}
+
+.aboutcard {
+  background-color: #efefef;
+  padding: 0 30px;
+  color: #555;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
+  word-wrap: normal;
+  height: auto;
+}
+
+table {
+  table-layout: fixed; 
+}
+
+.abouttable {
+  width: 100%; 
 }
 
 .difimg {
-  width: 5%; 
-  height: 5%; 
-  text-align: center; 
-  word-wrap: normal;
-  vertical-align: middle; 
+  width: 100px; 
+  height: 100px; 
   padding: 5px; 
+  display: block; 
+  margin: 0 auto;
 }
 
 .chart {
