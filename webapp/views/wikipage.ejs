@@ -8,8 +8,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="js/chart.js">
-    </script>
+    <script type="text/javascript" src="js/wikipage.js"></script>
     <% include partials/head %>
 </head>
 <body class="container">
@@ -17,11 +16,15 @@
     <header>
       <% include partials/header %>
     </header>
-    <h1 class="pageName" id="pageName"></h1>
+    <h1 id="pagename" class="pagename"></h1>
     <div id="chart_div" class="chart"></div>
     <br>
     <div class="descriptioncard">
       <div id="description" class="text"></div>
+    </div>
+    <br>
+    <div class="descriptioncard">
+      <div id="articles" class="text"></div>
     </div>
     <footer>
       <% include partials/footer %>

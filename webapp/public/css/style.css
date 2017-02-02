@@ -9,7 +9,7 @@
   font-size: 44px;
   padding: 10px;
   text-decoration-line: none;
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 
 .header {
@@ -18,19 +18,19 @@
   font-size: 30px;
   padding: 10px;
   text-decoration-line: none;
-  padding-top: 10px; 
+  padding-top: 10px;
 }
 
 .logo {
-  display: flex; 
-  align-self: center; 
+  display: flex;
+  align-self: center;
   align-content: center;
 }
 
 .logo img {
-  float: left; 
-  width: 18%; 
-  height: 18%; 
+  float: left;
+  width: 18%;
+  height: 18%;
 }
 
 .logo h1 {
@@ -41,7 +41,7 @@
   text-decoration-line: none;
   position: relative;
   word-wrap: normal;
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 
 .main {
@@ -64,7 +64,7 @@
   /*box-shadow: 10px 10px 5px #888;*/
   cursor: pointer;
   box-sizing: border-box;
-  word-wrap: normal; 
+  word-wrap: normal;
 }
 
 .row a {
@@ -117,14 +117,14 @@ div .navbutton {
   height: auto;
 }
 
-.pageName {
+.pagename {
   color: #555;
   font-weight:500;
   font-size: 30px;
   padding: 10px;
   text-decoration-line: none;
-  padding-top: 10px; 
-  margin-left: 10%; 
+  padding-top: 10px;
+  margin-left: 10%;
 }
 
 .descriptioncard {
@@ -151,9 +151,9 @@ div .text {
   width: 100%;
   word-wrap: normal;
   word-break: normal;
-  white-space: normal; 
-  text-align: left; 
-  vertical-align: top; 
+  white-space: normal;
+  text-align: left;
+  vertical-align: top;
 }
 
 .aboutcard {
@@ -177,27 +177,27 @@ div .text {
 }
 
 table {
-  table-layout: fixed; 
+  table-layout: fixed;
 }
 
 .abouttable {
-  width: 100%; 
+  width: 100%;
 }
 
 .difimg {
-  width: 100px; 
-  height: 100px; 
-  padding: 5px; 
-  display: block; 
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  display: block;
   margin: 0 auto;
 }
 
 .chart {
-  width: 80%; 
-  height: 400px; 
+  width: 80%;
+  height: 400px;
   margin: auto;
 }
 
 .footer {
-  padding: 10px; 
+  padding: 10px;
 }
