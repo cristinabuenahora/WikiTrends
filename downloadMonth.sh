@@ -1,10 +1,10 @@
 #!/bin/bash
 
-month=11
-mkdir "/nlp/data/sierray/"$month"12016"
-mkdir "/nlp/data/sierray/"$month"22016"
-mkdir "/nlp/data/sierray/"$month"32016"
-mkdir "/nlp/data/sierray/"$month"42016"
+month=01
+mkdir "/nlp/data/sierray/"$month"12017"
+mkdir "/nlp/data/sierray/"$month"22017"
+mkdir "/nlp/data/sierray/"$month"32017"
+mkdir "/nlp/data/sierray/"$month"42017"
 
 for day in "01" "02" "03" "04" "05" "06" "07" 
 do

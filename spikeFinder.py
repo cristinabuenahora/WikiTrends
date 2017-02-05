@@ -5,9 +5,16 @@ import math
 '''
 takes in makeDict.py data of 
 pagename  day1 day2 day3
+as first argument
+
+second argument is the day you're looking for
 '''
 
 def main():
+  '''
+  This should take in the last two weeks of averaged data, and compare to the current day
+  '''
+  #filename='/nlp/data/sierray/' + sys.argv[2]
   f = open(sys.argv[1])
   for line in f:
     # put the dayviews in a list
