@@ -32,11 +32,28 @@
             </tr>
           </table>
         </div>
-      <br> 
+      <br>
       <h1 class="header">Our Algorithm</h1>
       <div class="aboutcard">
         <div class="text">The pageview data is publicly stored as a .gz file on a Wikipedia website. We’ve written a couple bash scripts that download all the files for a day, week, or month. The files are automatically downloaded through a cron job and are stored in the NLP grid. After downloading the files, we create a dictionary with the pagename and the aggregated hourly data. Doing so allows us to have the daily pageviews for each page in one object. To find the spikes, we create an average of the previous daily pageviews for that article and compare it to the current days pageviews to determine whether the page had a huge percent increase as well as a numerical increase. The values we’ve determined to be good indicators are a 1.5 percent increase and over 5,000 numerical increase.
-        </div> 
+        </div>
+      </div>
+      <br>
+      <h1 class="header">News Articles</h1>
+      <div class="aboutcard">
+        <div class="text">Based on a 2014 Pew Research Center study, we identified news sources based on the ideological composition of their audiences. First, we looked at the plot below, which shows us 30 news sources plotted on a liberal vs conservative scale.
+        </div>
+        <image source="articles1.png" class="image"/>
+        <div class="text">Next, we looked at an infographic which shows the most trusted news sources based on five ideological categories defined by the study: Consistently Liberal, Mostly Liberal, Mixed, Mostly Conservative, Consistently Conservative.
+        </div>
+        <image source="articles2.png" class="image"/>
+        <div class="text">We decided to combine the information from both plots to define news sources that not only represent varying perspectives, but also represent the most trusted sources. Based on this plot, we chose the following most trusted sources:
+          <div>1. Consistently Liberal: NPR, PBS, and BBC</div>
+          <div>2. Mostly Liberal: CNN and NBC </div>
+          <div>3. Mixed: ABC and CBS </div>
+          <div>4. Mostly Conservative: FOX </div>
+          <div>5. Consistently Conservative: Hannity, Limbaugh, and Glenn Beck</div>
+        </div>
       </div>
     </div>
   <footer>

@@ -54,7 +54,7 @@ var getArticles = function () {
   var pagename = $('#pagename').text();
   console.log(pagename);
 
-  var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=10&offset=0&mkt=en-us&safeSearch=Moderate";
+  var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=8&offset=0&mkt=en-us&safeSearch=Moderate";
   console.log("url: " + url);
 
   $.ajax({
@@ -67,11 +67,16 @@ var getArticles = function () {
       var innerHTML = "";
       console.log(data.value);
       for (var i = 0; i < data.value.length; i++) {
-        var date = data.value[i].datePublished;
         var source = data.value[i].provider[0].name;
         var name = data.value[i].name;
         var url = data.value[i].url;
-        innerHTML += ("<div> " + source + " (" + date + ") :" + "</div><a href=" + url + "> " + name + "</a>");
+        // var image = data.value[i].image;
+        // var imageDiv = "";
+        // if (image) {
+        //   var imageUrl = image.thumbnail.contentUrl;
+        //   imageDiv = "<img class=\"articleImg\" source="+ imageUrl + "></img>";
+        // }
+        innerHTML += ("<div class=\"text\"> " + source + ":" + "</div> <a class=\"text\" href=" + url + "> " + name + "</a>");
       }
       articles.html(innerHTML);
   	}
