@@ -1,35 +1,34 @@
 01/22 01/23 01/24 01/25 01/26 01/27 01/28 01/29 01/30 01/31 02/1 02/2 02/3 02/4 02/5 02/6 02/7 
-Santa_Clarita_Diet
-0 0 0 0 0 0 0 
-58998 49539 75680 104751 119832 111078 
+Santa_Clarita_Diet	50886 58998 49539 75680 104751 119832 111078 
 
-Tom_Brady
-0 0 0 0 0 0 0 
-Beyoncé
-0 0 0 0 0 0 0 
-Lucille_(guitar)
-0 0 0 0 0 0 0 
-Super_Bowl_LI
-0 0 0 0 0 0 0 
--
-0 0 0 0 0 0 0 
-Kristen_Stewart
-0 0 0 0 0 0 0 
-Gabriel_Jesus
-0 0 0 0 0 0 0 
-List_of_Super_Bowl_champions
-0 0 0 0 0 0 0 
-UFC_Fight_Night:_Bermudez_vs._Korean_Zombie
-0 0 0 0 0 0 0 
-Bowling_Green_massacre
-0 0 0 0 0 0 0 
-2003_Boeing_727-223_disappearance
-0 0 0 0 0 0 0 
-Alessia_Cara
-0 0 0 0 0 0 0 
-Extraversion_and_introversion
-0 0 0 0 0 0 0 
-Bowling_Green_Massacre
-0 0 0 0 0 0 0 
-Lulu_(singer)
-0 0 0 0 0 0 0 
+Tom_Brady	46843 83623 39369 60996 89993 126352 2443515 
+
+Beyoncé	57118 162449 90601 99265 297980 51133 52561 
+
+Lucille_(guitar)	80758 42000 11641 48717 207123 22631 789 
+
+Super_Bowl_LI	57441 54437 32062 60693 91851 121159 683056 
+
+-	43881 1235428 1225333 1584944 1463692 1321207 1504654 
+
+Kristen_Stewart	105658 15928 20399 13852 17586 227182 193746 
+
+Gabriel_Jesus	44118 11120 12319 14801 30275 83453 50403 
+
+List_of_Super_Bowl_champions	46967 62326 24242 53142 84641 102433 824429 
+
+UFC_Fight_Night:_Bermudez_vs._Korean_Zombie	84484 15751 12101 17558 28927 170314 26430 
+
+Bowling_Green_massacre	44283 627 6969 13981 17270 85681 61154 
+
+2003_Boeing_727-223_disappearance	200533 1230 718 562 558 402181 151525 
+
+Alessia_Cara	74773 7205 19242 15220 20856 156469 84820 
+
+Extraversion_and_introversion	46992 30517 6956 6833 122182 1338 1610 
+
+Bowling_Green_Massacre	64249 69531 50886 73925 144665 113394 58470 
+
+Lulu_(singer)	42433 1514 1417 1938 75978 12134 7297 
+
+
