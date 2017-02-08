@@ -5,7 +5,7 @@
 # arg 3 is the week 
 
 month="02"
-day="04"
+day="07"
 week="1"
 fullfile="pageviews-2017"$month$day
 
