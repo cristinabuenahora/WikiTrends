@@ -11,8 +11,7 @@
     <script type="text/javascript" src="js/wikipage.js"></script>
     <% include partials/head %>
 </head>
-<body class="container">
-  <div class="main">
+<body class="main">
     <header>
       <% include partials/header %>
     </header>
@@ -21,22 +20,12 @@
       <div id="description" class="text"></div>
     </div>
     <br>
-    <div class="row">
-      <div class="chart column">
-        <div id="chart_div" class="chart"></div>
-        <br>
-        <div class="contentCard">
-          <div class="text">Related WikiPages:</div>
-        </div>
-      </div>
-      <div class="contentCard content column">
-        <div id="articles" class="text"></div>
-      </div>
-    </div>
+    <div id="chart_div" class="chart"></div>
+    <br>
+    <div class="descriptioncard" id="articles"></div>
     <br>
     <footer>
       <% include partials/footer %>
     </footer>
-  </div>
 </body>
 </html>
