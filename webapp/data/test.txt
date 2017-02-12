@@ -1,15 +1,18 @@
-Jayalalithaa	2630 2686 1979 264914 1430600 1659050 409260	Jayalalithaa Jayaram was an Indian actress and politician who served five terms as the Chief Minister of Tamil Nadu, for over fourteen years between 1991 and 2016.
-Rømer's_determination_of_the_speed_of_light	122 134 80 97 117 55375 868035	Rømer's determination of the speed of light was the demonstration in 1676 that light has a finite speed, and so does not travel instantaneously.
-M._G._Ramachandran	1398 1478 1370 12506 124848 452563 162651	Marudur Gopalan Ramachandran, popularly known as MGR, was an Indian actor and politician who served as Chief Minister of Tamil Nadu for ten years between 1977 and 1987.
-Westworld_(TV_series)	97144 87029 90950 119265 319448 276702 191770	Westworld isn't your typical amusement park. Intended for rich vacationers, the futuristic park -- which is looked after by robotic "hosts" -- allows its visitors to live out their fantasies through artificial consciousness.
-Sasikala_Natarajan	122 136 111 2821 51081 323510 119703	Sasikala Natarajan was a confidante of All India Anna Dravida Munnetra Kazhagam politician and former Chief Minister of Tamil Nadu, J. Jayalalithaa.
-Junaid_Jamshed	180 216 241 254 206 207 457306	Junaid Jamshed was a Pakistani recording artist, television personality, fashion designer, occasional actor, singer-songwriter, preacher and televangelist.
-Attack_on_Pearl_Harbor	14214 15634 13802 32643 53804 60785 275659	The attack on Pearl Harbor, also known as the Battle of Pearl Harbor,[9] the Hawaii Operation or Operation AI by the Japanese Imperial General Headquarters,[10][11] and Operation Z during planning,[12] was a surprise military strike by the Imperial Japanese Navy against the United States naval base at Pearl Harbor, Hawaii Territory, on the morning of December 7, 1941. The attack led to the United States' entry into World War II.
-Transformers:_The_Last_Knight	8817 8956 8657 10874 27442 203688 100254	Transformers: The Last Knight is an upcoming 2017 American science fiction-action film based on the Transformers toy line.
-The_Mummy_(2017_film)	49252 72144 31362 23974 247546 123790 58160	Thought safely entombed in a crypt deep beneath the desert, an ancient queen whose destiny was unjustly taken from her is awakened in the modern era, bringing with her malevolence grown over millennia and terrors that defy human comprehension.
-Peter_Vaughan	479 473 428 514 588 201383 81758	Peter Vaughan was an English character actor, known for many supporting roles in British film and television productions. He also worked extensively on the stage.
-O._Panneerselvam	225 318 470 2713 78509 154170 44917	Ottakara Panneerselvam is an Indian politician who is serving as the Chief Minister of Tamil Nadu since December 6, 2016. He had previously served in the same office in 2001-02 and 2014-15.
-TLC:_Tables,_Ladders_&_Chairs_(2016)	25760 24155 28412 49007 301213 40814 22257	TLC: Tables, Ladders & Chairs (2016) was a professional wrestling pay-per-view (PPV) event and WWE Network event produced by WWE for the SmackDown brand. It took place on December 4, 2016, at the American Airlines Center in Dallas, Texas.
-Time_Person_of_the_Year	3169 2614 4355 5792 40221 25302 212041	Person of the Year (called Man of the Year until 1999[1]) is an annual issue of the United States news magazine Time that features and profiles a person, a group, an idea, or an object that "for better or for worse...has done the most to influence the events of the year".
-List_of_United_States_presidential_electors,_2016	2237 1919 1724 1403 1727 148529 117758	This is a list of electors (members of the Electoral College) who cast ballots to elect the President of the United States and Vice President of the United States in the 2016 presidential election.
-John_Christie_(murderer)	49804 48090 61554 54901 46834 169809 158794	John Reginald Halliday Christie, known to his family and friends as Reg Christie, was an English serial killer active during the 1940s and early 1950s.
+01/22 01/23 01/24 01/25 01/26 01/27 01/28 01/29 01/30 01/31 02/1 02/2 02/3 02/4 02/5 02/6 02/7 
+Santa_Clarita_Diet	50886 58998 49539 75680 104751 119832 111078 
+Tom_Brady	46843 83623 39369 60996 89993 126352 2443515 
+Beyoncé	57118 162449 90601 99265 297980 51133 52561 
+Lucille_(guitar)	80758 42000 11641 48717 207123 22631 789 
+Super_Bowl_LI	57441 54437 32062 60693 91851 121159 683056 
+-	43881 1235428 1225333 1584944 1463692 1321207 1504654 
+Kristen_Stewart	105658 15928 20399 13852 17586 227182 193746 
+Gabriel_Jesus	44118 11120 12319 14801 30275 83453 50403 
+List_of_Super_Bowl_champions	46967 62326 24242 53142 84641 102433 824429 
+UFC_Fight_Night:_Bermudez_vs._Korean_Zombie	84484 15751 12101 17558 28927 170314 26430 
+Bowling_Green_massacre	44283 627 6969 13981 17270 85681 61154 
+2003_Boeing_727-223_disappearance	200533 1230 718 562 558 402181 151525 
+Alessia_Cara	74773 7205 19242 15220 20856 156469 84820 
+Extraversion_and_introversion	46992 30517 6956 6833 122182 1338 1610 
+Bowling_Green_Massacre	64249 69531 50886 73925 144665 113394 58470 
+Lulu_(singer)	42433 1514 1417 1938 75978 12134 7297 
+
