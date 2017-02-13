@@ -136,8 +136,24 @@ div .navbutton {
 }
 
 .cardimg {
-  height: 120px;
+  height: 130px;
   width: auto;
+}
+
+.innercard {
+  padding: 0 50px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 30px;
+  letter-spacing: .1rem;
+  text-transform: none;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-sizing: border-box;
+  word-wrap: normal;
+  height: auto;
 }
 
 .cardtext {
@@ -148,7 +164,6 @@ div .navbutton {
   text-align: left;
   vertical-align: top;
   color: white;
-  margin-left: 30px;
   font-size: 24px;
   text-transform: none;
   font-weight: normal;
@@ -307,36 +322,60 @@ table {
   padding: 10px;
 }
 
-.articlecard {
+.articlescard {
   margin: 20px 100px;
   padding: 0 50px;
-  text-align: left;
   font-size: 14px;
   font-weight: normal;
   line-height: 30px;
   letter-spacing: .1rem;
-  text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
   box-sizing: border-box;
   word-wrap: normal;
   height: auto;
+  width: auto;
+  display: flex;
+  align-self: center;
+  align-content: center;
+}
 
-/*
-  width: 200px;
+.articlecard {
+  margin: 20px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 30px;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-sizing: border-box;
   word-wrap: normal;
+  height: auto;
+  width: 33%;
   word-break: normal;
   white-space: normal;
-  text-align: left;
+  text-align: center;
   vertical-align: top;
   color: white;
-  margin-left: 30px;
-  font-size: 18px;
-  text-transform: none;
-  font-weight: normal;*/
+}
+
+.articleimg {
+  width: 125px;
+  height: auto;
+  padding: 5px;
+  display: block;
+  margin: 0 auto;
 }
 
 .footer {
   padding: 10px;
+  width: 100%;
+  word-wrap: normal;
+  word-break: normal;
+  white-space: normal;
+  text-align: center;;
+  vertical-align: top;
+  color: white;
 }

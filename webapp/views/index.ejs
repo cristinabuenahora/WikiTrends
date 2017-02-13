@@ -24,9 +24,9 @@
       <ul>
         <% for (var i = 1; i < numberOfPages - 1; i++) { %>
           <div id="wikicard<%=i%>" class="card">
-            <img src="/images/placeholder.png" class="cardimg"></img>
+            <!--<img src="/images/placeholder.png" class="cardimg"></img>-->
             <a href="/wikipage?<%=i%>" id="wikipage<%=i%>" class="cardtext">
-              <p id="title<%=i%>" class="cardtext"><%= wikiPageNames[i] %></p>
+              <div id="title<%=i%>" class="cardtext"><%= wikiPageNames[i] %></div>
             </a>
           </div>
         <% } %>
