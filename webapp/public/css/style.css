@@ -86,13 +86,10 @@
 }
 
 .row a {
-  color: #555;
   text-align: left;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: normal;
-  line-height: 38px;
   letter-spacing: .1rem;
-  text-transform: uppercase;
   text-decoration: none;
 }
 
@@ -133,6 +130,12 @@ div .navbutton {
   display: flex;
   align-self: center;
   align-content: center;
+}
+
+.imgcontainer {
+  width: 300px;
+  display: flex;
+  align-items: center;
 }
 
 .cardimg {
@@ -196,7 +199,6 @@ div .navbutton {
   font-weight: normal;
   line-height: 30px;
   letter-spacing: .1rem;
-  text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
   border-radius: 4px;

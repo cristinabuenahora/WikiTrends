@@ -32,11 +32,14 @@ var getImages = function () {
 
             desc = blurb[0].innerHTML.split('<p>');
             desc = desc[1].split('</p>')[0];
+
             console.log(desc);
 
             for (var i = 1; i < numberOfPages - 1; i++) {
               if ($("#title" + i).html() === (title)) {
-                var newHTML = "<img src=\"" + img + "\" class=\"cardimg\">" + "<div class=\"innercard\">" + $("#wikicard" + i).html() + "<div class=\"text\">" + desc + "</div> </div>";
+                var inner = $("#wikipage" + i).html() + "<div class=\"text\">" + desc + "</div> </div>";
+                $("#wikipage" + i).html(inner);
+                var newHTML = "<div class=\"imgcontainer\"><img src=\"" + img + "\" class=\"cardimg\"></div>" + "<div class=\"innercard\">" + $("#wikicard" + i).html();
                 $("#wikicard" + i).html(newHTML);
 
               }
@@ -45,37 +48,5 @@ var getImages = function () {
         error: function (errorMessage) {
         }
     });
-
-
-
-
-    // $.ajax({
-    // 	type: 'GET',
-    // 	url: url,
-    //   success: function (data) {
-    //     if (data.value[0].image) {
-          // var imageUrl = data.value[0].image.thumbnail.contentUrl;
-          // var newHTML = "<img src=\"" + imageUrl + "\">" + $("#wikicard" + index).html();
-          // $("#wikicard" + index).html(newHTML);
-          // console.log($("#wikicard" + index).html());
-    //     }
-    //     index++;
-    // 	}
-    // });
-
-    // $.ajax({
-    // 	type: 'GET',
-    // 	url: url,
-    //   host: "api.cognitive.microsoft.com",
-    //   headers: {"Ocp-Apim-Subscription-Key": "a3a6b62b91864305997790635e06cbcf"},
-    //   success: function (data) {
-    //     console.log(data);
-    //     var imageUrl = data.value[0].contentUrl;
-    //     var newHTML = "<img src=\"" + imageUrl + "\" class=\"cardimg\">" + $("#wikicard" + index).html();
-    //     $("#wikicard" + index).html(newHTML);
-    //     console.log($("#wikicard" + index).html());
-    //     index++;
-    // 	}
-    // });
   }
 };

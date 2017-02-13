@@ -23,7 +23,6 @@ $.get( "/getData", function(data) {
         data.addColumn('number', pagename);
         var dates = pageData[0].split(' ');
         var pageCounts = pageData[id].split('\t')[1].split(' ');
-        var description =  pageData[id].split('\t')[2];
 
         rows = [];
         for (var i = 0; i < pageCounts.length; i++) {
@@ -49,12 +48,47 @@ $.get( "/getData", function(data) {
         var chart = new google.charts.Line(document.getElementById('chart_div'));
         chart.draw(data, options);
 
-        // add description
-        document.getElementById('description').innerHTML += description;
-
+        getDescription();
         getArticles();
     }
 });
+
+var getDescription = function () {
+  var pagename = $('#pagename').text();
+  console.log(pagename);
+  var url = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=' + pagename + '&callback=?';
+
+  $.ajax({
+      type: "GET",
+      url: url,
+      contentType: "application/json; charset=utf-8",
+      async: false,
+      dataType: "json",
+      success: function (data, textStatus, jqXHR) {
+
+          var title = data.parse.title;
+          var markup = data.parse.text["*"];
+          var blurb = $('<div></div>').html(markup);
+
+          // remove links as they will not work
+          blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
+          // remove any references
+          blurb.find('sup').remove();
+          // remove cite error
+          blurb.find('.mw-ext-cite-error').remove();
+
+          desc = blurb[0].innerHTML.split('<p>');
+          desc = desc[1].split('</p>')[0];
+
+          console.log(desc);
+
+          // add description to html
+          document.getElementById('description').innerHTML += desc;
+      },
+      error: function (errorMessage) {
+      }
+  });
+}
 
 var getArticles = function () {
   var pagename = $('#pagename').text();
