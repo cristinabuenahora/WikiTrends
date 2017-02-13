@@ -21,13 +21,14 @@ $.get( "/getData", function(data) {
         document.getElementById('pagename').innerHTML += pagename;
 
         data.addColumn('number', pagename);
+        var dates = pageData[0].split(' ');
         var pageCounts = pageData[id].split('\t')[1].split(' ');
         var description =  pageData[id].split('\t')[2];
 
         rows = [];
         for (var i = 0; i < pageCounts.length; i++) {
             var row = [];
-            row.push('Dec ' + (i + 1));
+            row.push(dates[i]);
             row.push(parseInt(pageCounts[i]));
             rows.push(row);
         }
@@ -37,7 +38,12 @@ $.get( "/getData", function(data) {
             legend: {
                 position: 'none'
             },
-            colors: ['#1d224c']
+            tooltip: {isHtml: true},
+            backgroundColor: {
+                fill: '#292f36',
+                opacity: 100
+             },
+            colors: ['#4ecdc4']
         };
 
         var chart = new google.charts.Line(document.getElementById('chart_div'));
@@ -70,13 +76,13 @@ var getArticles = function () {
         var source = data.value[i].provider[0].name;
         var name = data.value[i].name;
         var url = data.value[i].url;
-        // var image = data.value[i].image;
+        var image = data.value[i].image;
         // var imageDiv = "";
         // if (image) {
-        //   var imageUrl = image.thumbnail.contentUrl;
-        //   imageDiv = "<img class=\"articleImg\" source="+ imageUrl + "></img>";
+        //    var imageUrl = image.thumbnail.contentUrl;
+        //    imageDiv = "<img class=\"articleImg\" source="+ imageUrl + "></img>";
         // }
-        innerHTML += ("<div class=\"text\"> " + source + ":" + "</div> <a class=\"text\" href=" + url + "> " + name + "</a>");
+        innerHTML += ("<div class=\"articlecard\"> " + source + ":" + "</div> <a class=\"text\" href=" + url + "> " + name + "</a>");
       }
       articles.html(innerHTML);
   	}

@@ -15,14 +15,20 @@
     <header>
       <% include partials/header %>
     </header>
-    <h1 id="pagename" class="pagename"></h1>
-    <div class="descriptioncard">
-      <div id="description" class="text"></div>
+    <div class="card">
+    <div id="pagename" class="wikipageheader"></div>
+    <div id="description" class="abouttext"></div>
+    </div>
+    <div class="aboutbar"></div>
+    <br>
+    <div class="card">
+      <div id="chart_div" class="chart"></div>
     </div>
     <br>
-    <div id="chart_div" class="chart"></div>
+    <img src="images/timeline.png" class="timeline"></img>
     <br>
-    <div class="descriptioncard" id="articles"></div>
+    <div id="articles" class="card">
+    </div>
     <br>
     <footer>
       <% include partials/footer %>

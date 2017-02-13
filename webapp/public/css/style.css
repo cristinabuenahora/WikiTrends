@@ -6,7 +6,7 @@
 }
 
 .title {
-  color: #4ECDC4;
+  color: #4ecdc4;
   font-weight:normal;
   font-size: 44px;
   padding: 10px;
@@ -154,14 +154,22 @@ div .navbutton {
   font-weight: normal;
 }
 
-.pagename {
-  color: #555;
-  font-weight:normal;
-  font-size: 50px;
-  padding: 10px;
-  text-decoration-line: none;
-  padding-top: 10px;
-  text-align: center;
+.wikipageheader {
+  color: white;
+  font-weight: normal;
+  font-size: 40px;
+  text-align: left;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.timeline {
+  width: 1000px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .descriptioncard {
@@ -290,12 +298,43 @@ table {
 }
 
 .chart {
-  width: 90%;
+  width: 100%;
   height: auto;
   min-height: 300px;
   max-height: 500px;
-  margin: 10px;
-  align-items: center;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.articlecard {
+  margin: 20px 100px;
+  padding: 0 50px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 30px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-sizing: border-box;
+  word-wrap: normal;
+  height: auto;
+
+/*
+  width: 200px;
+  word-wrap: normal;
+  word-break: normal;
+  white-space: normal;
+  text-align: left;
+  vertical-align: top;
+  color: white;
+  margin-left: 30px;
+  font-size: 18px;
+  text-transform: none;
+  font-weight: normal;*/
 }
 
 .footer {
