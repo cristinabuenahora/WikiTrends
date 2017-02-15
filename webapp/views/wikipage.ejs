@@ -11,32 +11,27 @@
     <script type="text/javascript" src="js/wikipage.js"></script>
     <% include partials/head %>
 </head>
-<body class="container">
-  <div class="main">
+<body class="main">
     <header>
       <% include partials/header %>
     </header>
-    <h1 id="pagename" class="pagename"></h1>
-    <div class="descriptioncard">
-      <div id="description" class="text"></div>
+    <div class="card">
+    <div id="pagename" class="wikipageheader"></div>
+    <div id="description" class="abouttext"></div>
+    </div>
+    <div class="aboutbar"></div>
+    <br>
+    <div class="card">
+      <div id="chart_div" class="chart"></div>
     </div>
     <br>
-    <div class="row">
-      <div class="chart column">
-        <div id="chart_div" class="chart"></div>
-        <br>
-        <div class="contentCard">
-          <div class="text">Related WikiPages:</div>
-        </div>
-      </div>
-      <div class="contentCard content column">
-        <div id="articles" class="text"></div>
-      </div>
+    <img src="images/timeline.png" class="timeline"></img>
+    <br>
+    <div class="articlescard" id="articles">
     </div>
     <br>
     <footer>
       <% include partials/footer %>
     </footer>
-  </div>
 </body>
 </html>

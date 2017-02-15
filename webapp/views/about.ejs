@@ -6,48 +6,55 @@
 <head>
     <% include partials/head %>
 </head>
-<body class="container">
-  <div class="main">
+<body class="main">
     <header>
       <% include partials/header %>
     </header>
     <div class="row">
-      <h1 class="header">Mission</h1>
+      <div class="aboutheader">Mission</div>
+      <div class="aboutbar"></div>
       <div class="aboutcard">
-        <div class="text">WikiTrends challenges today’s media standard by creating an unbiased news source based on pure facts, revolutionizing the way people interact with news articles. </div>
+        <div class="abouttext">WikiTrends challenges today’s media standard by creating an unbiased news source based on pure facts, revolutionizing the way people interact with news articles. </div>
       </div>
-      <br>
-      <h1 class="header">Differentiators</h1>
-        <div class="aboutcard">
-          <table class="abouttable">
-            <tr>
-              <th><img class="difimg" src="images/dif1.png"></th>
-              <th><img class="difimg" src="images/dif2.png"></th>
-              <th><img class="difimg" src="images/dif3.png"> </th>
-            </tr>
-            <tr>
-              <td class="text">Based on searches trending worldwide, not personalized to user</td>
-              <td class="text">Based on Wikipedia articles, which is factual information</td>
-              <td class="text">Follows Wikipedia's motivation of educating people under a free license</td>
-            </tr>
-          </table>
-        </div>
-      <br>
-      <h1 class="header">Our Algorithm</h1>
+      <br><br>
+      <div class="aboutheader">Differentiators</div>
+      <div class="aboutbar"></div>
       <div class="aboutcard">
-        <div class="text">The pageview data is publicly stored as a .gz file on a Wikipedia website. We’ve written a couple bash scripts that download all the files for a day, week, or month. The files are automatically downloaded through a cron job and are stored in the NLP grid. After downloading the files, we create a dictionary with the pagename and the aggregated hourly data. Doing so allows us to have the daily pageviews for each page in one object. To find the spikes, we create an average of the previous daily pageviews for that article and compare it to the current days pageviews to determine whether the page had a huge percent increase as well as a numerical increase. The values we’ve determined to be good indicators are a 1.5 percent increase and over 5,000 numerical increase.
+        <table class="abouttable">
+          <tr>
+          <th><img class="difimg" src="images/dif1.png"></th>
+          <th><img class="difimg" src="images/dif2.png"></th>
+          <th><img class="difimg" src="images/dif3.png"> </th>
+          </tr>
+          <tr>
+          <td class="abouttext">Based on searches trending worldwide, not personalized to user</td>
+          <td class="abouttext">Based on Wikipedia articles, which is factual information</td>
+          <td class="abouttext">Follows Wikipedia's motivation of educating people under a free license</td>
+          </tr>
+        </table>
+      </div>
+      <br><br>
+      <div class="aboutheader">Our Algorithm</div>
+      <div class="aboutbar"></div>
+      <div class="aboutcard">
+        <div class="abouttext">The pageview data is publicly stored as a .gz file on a Wikipedia website. We’ve written a couple bash scripts that download all the files for a day, week, or month. The files are automatically downloaded through a cron job and are stored in the NLP grid. After downloading the files, we create a dictionary with the pagename and the aggregated hourly data. Doing so allows us to have the daily pageviews for each page in one object. To find the spikes, we create an average of the previous daily pageviews for that article and compare it to the current days pageviews to determine whether the page had a huge percent increase as well as a numerical increase. The values we’ve determined to be good indicators are a 1.5 percent increase and over 5,000 numerical increase.
         </div>
       </div>
-      <br>
-      <h1 class="header">News Articles</h1>
+      <br><br>
+      <div class="aboutheader">News Articles</div>
+      <div class="aboutbar"></div>
       <div class="aboutcard">
-        <div class="text">Based on a 2014 Pew Research Center study, we identified news sources based on the ideological composition of their audiences. First, we looked at the plot below, which shows us 30 news sources plotted on a liberal vs conservative scale.
+        <div class="abouttext">Based on a 2014 Pew Research Center study, we identified news sources based on the ideological composition of their audiences. First, we looked at the plot below, which shows us 30 news sources plotted on a liberal vs conservative scale.
         </div>
-        <image source="articles1.png" class="image"/>
-        <div class="text">Next, we looked at an infographic which shows the most trusted news sources based on five ideological categories defined by the study: Consistently Liberal, Mostly Liberal, Mixed, Mostly Conservative, Consistently Conservative.
+        <br>
+        <image src="images/articles1.png" class="image"/>
+        <br>
+        <div class="abouttext">Next, we looked at an infographic which shows the most trusted news sources based on five ideological categories defined by the study: Consistently Liberal, Mostly Liberal, Mixed, Mostly Conservative, Consistently Conservative.
         </div>
-        <image source="articles2.png" class="image"/>
-        <div class="text">We decided to combine the information from both plots to define news sources that not only represent varying perspectives, but also represent the most trusted sources. Based on this plot, we chose the following most trusted sources:
+        <br>
+        <image src="images/articles2.png" class="image"/>
+        <br>
+        <div class="abouttext">We decided to combine the information from both plots to define news sources that not only represent varying perspectives, but also represent the most trusted sources. Based on this plot, we chose the following most trusted sources:
           <div>1. Consistently Liberal: NPR, PBS, and BBC</div>
           <div>2. Mostly Liberal: CNN and NBC </div>
           <div>3. Mixed: ABC and CBS </div>
@@ -59,6 +66,5 @@
   <footer>
     <% include partials/footer %>
   </footer>
-  </div>
 </body>
 </html>
