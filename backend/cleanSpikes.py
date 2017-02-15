@@ -58,7 +58,7 @@ for line in countDict:
 
 acc = ""
 for s in spikes:
-  acc += s + "\t" + spikes[s] + "\n"
+  acc += s + "\t" + spikes[s]
 
 print acc
 
