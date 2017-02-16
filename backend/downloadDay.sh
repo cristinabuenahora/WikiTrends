@@ -4,9 +4,9 @@
 # arg 2 is the day
 # arg 3 is the week 
 
-month="02"
-day="07"
-week="1"
+month=$1
+day=$2
+week=$3
 fullfile="pageviews-2017"$month$day
 
 hours=("00" "01" "02" "03" "04" "05" "06" "07" "08" "09" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23")
