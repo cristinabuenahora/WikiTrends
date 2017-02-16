@@ -94,7 +94,7 @@ var getArticles = function () {
   var pagename = $('#pagename').text();
   console.log(pagename);
 
-  var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=5&offset=0&mkt=en-us&safeSearch=Moderate";
+  var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=5&offset=0&mkt=en-us&safeSearch=Moderate&freshness=day";
   console.log("url: " + url);
 
   $.ajax({

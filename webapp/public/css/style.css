@@ -268,6 +268,28 @@ div .text {
   font-weight: normal;
 }
 
+.nametext {
+  width: 100%;
+  word-wrap: normal;
+  word-break: normal;
+  white-space: normal;
+  text-align: center;
+  vertical-align: top;
+  color: white;
+  margin-left: 30px;
+  font-size: 28px;
+  text-transform: none;
+  font-weight: normal;
+}
+
+.aboutimg {
+  height: 200px;
+  width: auto;
+  padding: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
 table {
   table-layout: fixed;
 }
