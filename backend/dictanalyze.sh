@@ -1,10 +1,13 @@
 
-month="01"
+month="02"
 year="2017"
-#python makeDict.py "/nlp/data/sierray/"$month"1"$year > "/nlp/data/sierray/"$month"1"$year"/countDict"
 
-#python makeDict.py "/nlp/data/sierray/"$month"2"$year > "/nlp/data/sierray/"$month"2"$year"/countDict"
+weeks=("1" "2" "3" "4")
+for week in ${weeks[*]}
+do
+  file="/nlp/data/sierray/"$month$week$year
+  python makeDict.py $file > $file"/countDict"
+  python spikeFinder.py $file"/countDict" > $file"/spikes"
+  sort -k2 -n -r $file"/spikes" > $file"/topSpikes"
+done
 
-#python makeDict.py "/nlp/data/sierray/"$month"3"$year > "/nlp/data/sierray/"$month"3"$year"/countDict"
-
-python makeDict.py "/nlp/data/sierray/"$month"4"$year > "/nlp/data/sierray/"$month"4"$year"/countDict"
