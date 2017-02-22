@@ -176,9 +176,13 @@ div .navbutton {
   font-size: 40px;
   text-align: left;
   vertical-align: middle;
+  word-wrap: normal;
+  word-break: normal;
+  white-space: normal;
   display: flex;
   align-items: center;
   padding: 0px 10px;
+  max-width: 600px;
 }
 
 .timeline {
