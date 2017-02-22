@@ -10,7 +10,6 @@
   font-weight:normal;
   font-size: 44px;
   padding: 10px;
-  text-decoration-line: none;
   vertical-align: middle;
 }
 
@@ -19,7 +18,6 @@
   font-weight:normal;
   font-size: 50px;
   padding: 10px;
-  text-decoration-line: none;
   padding-top: 10px;
 }
 
@@ -276,8 +274,20 @@ div .text {
   text-align: center;
   vertical-align: top;
   color: white;
-  margin-left: 30px;
   font-size: 28px;
+  text-transform: none;
+  font-weight: normal;
+}
+
+.infotext {
+  width: 100%;
+  word-wrap: normal;
+  word-break: normal;
+  white-space: normal;
+  text-align: left;
+  vertical-align: top;
+  color: white;
+  font-size: 16px;
   text-transform: none;
   font-weight: normal;
 }
