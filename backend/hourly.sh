@@ -2,12 +2,12 @@
 
 # find the hour, an hour ago, seems to be london based?
 hour=`date -d '7 hours ago' +%H`
-year=`date +%Y`
-month=`date +%m`
 day=`date +%d`
-fullfile="pageviews-2017"$month$day
+month=`date +%m`
+monthb=$month
+year=`date +%Y`
 
-# find the week in a long string of for loops
+# find the week and week before in a long string of for loops
 for d in "01" "02" "03" "04" "05" "06" "07"
 do
 if [ "$day" == "$d" ]; then
@@ -36,28 +36,6 @@ if [ "$day" == "$d" ]; then
 fi
 done
 
-#download the file
-file=$fullfile"-"$hour"0000"
-url="https://dumps.wikimedia.org/other/pageviews/"$year"/"$year"-"$month"/"$file".gz"
-echo $url
-wget $url -O "zipped/"$file".gz"
-
-# unzip file
-gunzip "zipped/"$file".gz"
-mkdir data/$month$week$year
-# look for the english entries
-grep ^en "zipped/"$file > "data/"$month$week$year"/"$file
-
-# remove extra files
-rm "zipped/"$file
-
-# make file of dictionary
-python makeDict.py "data/"$month$week$year > "data/"$month$week$year"/countDict"
-# analyse the spikes
-python spikeFinder.py "data/"$month$week$year"/countDict" > "data/"$month$week$year"/spikes"
-
-# clean the spikes
-monthb=$month
 if [$week == "1"]; then
   weekb=4
   monthb=`date -d '1 month ago' +%m`
@@ -75,15 +53,16 @@ else
   yearb=$year
 fi
 
+#bash downloadHour.sh $hour $day $week $month $year
+#python makeDict.py "data/"$month$week$year > "data/"$month$week$year"/countDict"
+python spikeFinder.py "data/"$month$week$year"/countDict" > "data/"$month$week$year"/spikes"
+
 countDict1="data/"$month$week$year"/countDict"
 countDict2="data/"$monthb$weekb$yearb"/countDict"
 datafile="../webapp/data/test.txt"
 
 sort -k2 -n -r "data/"$month$week$year"/spikes" > "data/"$month$week$year"/topSpikes"
-echo $month
 python addDate.py $month $week $monthb $weekb > $datafile
 python cleanSpikes.py "data/"$month$week$year"/topSpikes" $countDict1 $countDict2 >> $datafile
 
 echo "downloaded and analyzed an hour"
-
-
