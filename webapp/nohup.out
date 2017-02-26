@@ -1,0 +1,3 @@
+Sun, 26 Feb 2017 23:28:40 GMT express-session deprecated undefined resave option; provide resave option at app.js:22:9
+Sun, 26 Feb 2017 23:28:40 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:22:9
+App listening on port 8000
