@@ -1,8 +1,7 @@
 # Script that downloads the past hour of data, and redoes the analysis
 
 # find the hour, an hour ago, seems to be london based?
-hour=`date -d '6 hours ago' +%H`
-
+hour=`date -d '7 hours ago' +%H`
 year=`date +%Y`
 month=`date +%m`
 day=`date +%d`
@@ -37,16 +36,54 @@ if [ "$day" == "$d" ]; then
 fi
 done
 
+#download the file
 file=$fullfile"-"$hour"0000"
 url="https://dumps.wikimedia.org/other/pageviews/"$year"/"$year"-"$month"/"$file".gz"
 echo $url
-wget $url -O "/nlp/data/sierray/pageviews/"$file".gz"
-gunzip "/nlp/data/sierray/pageviews/"$file".gz"
-grep ^en "/nlp/data/sierray/pageviews/"$file > "/nlp/data/sierray/"$month$week$year"/"$file
-rm "/nlp/data/sierray/pageviews/"$file
+wget $url -O "zipped/"$file".gz"
 
-python makeDict.py "/nlp/data/sierray/"$month$week$year > "/nlp/data/sierray/"$month$week$year"/countDict"
-python spikeFinder.py "/nlp/data/sierray/"$month$week$year"/countDict" > "/nlp/data/sierray/"$month$week$year"/spikes"
+# unzip file
+gunzip "zipped/"$file".gz"
+mkdir data/$month$week$year
+# look for the english entries
+grep ^en "zipped/"$file > "data/"$month$week$year"/"$file
+
+# remove extra files
+rm "zipped/"$file
+
+# make file of dictionary
+python makeDict.py "data/"$month$week$year > "data/"$month$week$year"/countDict"
+# analyse the spikes
+python spikeFinder.py "data/"$month$week$year"/countDict" > "data/"$month$week$year"/spikes"
+
+# clean the spikes
+monthb=$month
+if [$week == "1"]; then
+  weekb=4
+  monthb=`date -d '1 month ago' +%m`
+elif [$week == "2"]; then
+  weekb=1
+elif [$week == "3"]; then
+  weekb=2
+else
+  weekb=3
+fi
+
+if [$monthb == "12"]; then
+  yearb=`date -d '1 year ago' +%Y`
+else
+  yearb=$year
+fi
+
+countDict1="data/"$month$week$year"/countDict"
+countDict2="data/"$monthb$weekb$yearb"/countDict"
+datafile="../webapp/data/test.txt"
+
+sort -k2 -n -r "data/"$month$week$year"/spikes" > "data/"$month$week$year"/topSpikes"
+echo $month
+python addDate.py $month $week $monthb $weekb > $datafile
+python cleanSpikes.py "data/"$month$week$year"/topSpikes" $countDict1 $countDict2 >> $datafile
+
 echo "downloaded and analyzed an hour"
 
 

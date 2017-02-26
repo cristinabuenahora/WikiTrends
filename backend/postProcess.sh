@@ -29,11 +29,4 @@ datafile="../webapp/data/test.txt"
 sort -k2 -n -r "data/"$month$week$year"/spikes" > "data/"$month$week$year"/topSpikes"
 python addDate.py $month $week $month2 $week2 > $datafile 
 python cleanSpikes.py "data/"$month$week$year"/topSpikes" $countDict1 $countDict2 >> $datafile 
-git pull
-git add ../webapp/data/test.txt
-git commit -m "new data"
-git push
-
-
-
 
