@@ -55,7 +55,7 @@
   word-wrap: normal;
   display: inline-block;
   text-align: left;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: normal;
   line-height: 38px;
   letter-spacing: .1rem;
@@ -85,7 +85,7 @@
 
 .row a {
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   letter-spacing: .1rem;
   text-decoration: none;
@@ -114,7 +114,7 @@ div .navbutton {
   margin: 20px 100px;
   padding: 0 50px;
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   line-height: 30px;
   letter-spacing: .1rem;
@@ -130,15 +130,9 @@ div .navbutton {
   align-content: center;
 }
 
-.imgcontainer {
-  width: 300px;
-  display: flex;
-  align-items: center;
-}
-
 .cardimg {
-  height: 130px;
-  width: auto;
+  height: auto;
+  width: 200px;
 }
 
 .innercard {
@@ -155,6 +149,7 @@ div .navbutton {
   box-sizing: border-box;
   word-wrap: normal;
   height: auto;
+  align-self: center;
 }
 
 .cardtext {
@@ -197,7 +192,7 @@ div .navbutton {
   padding: 0 30px;
   color: #555;
   text-align: left;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: normal;
   line-height: 30px;
   letter-spacing: .1rem;
@@ -325,7 +320,7 @@ table {
   padding: 0 30px;
   color: #555;
   text-align: left;
-  font-size: 14px;
+  font-size: ;
   font-weight: normal;
   line-height: 38px;
   letter-spacing: .1rem;
@@ -363,7 +358,7 @@ table {
 .articlescard {
   margin: 20px 100px;
   padding: 0 50px;
-  font-size: 14px;
+  font-size: ;
   font-weight: normal;
   line-height: 30px;
   letter-spacing: .1rem;
@@ -381,7 +376,7 @@ table {
 
 .articlecard {
   margin: 20px;
-  font-size: 14px;
+  font-size: ;
   font-weight: normal;
   line-height: 30px;
   letter-spacing: .1rem;

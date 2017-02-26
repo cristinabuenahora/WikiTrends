@@ -91,10 +91,13 @@ var getDescription = function () {
 }
 
 var getArticles = function () {
+
+  var newsSources = "npr pbs bbc cnn nbc abc fox hannity limbaugh glenn beck";
+
   var pagename = $('#pagename').text();
   console.log(pagename);
 
-  var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=5&offset=0&mkt=en-us&safeSearch=Moderate&freshness=day";
+  var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=30&offset=0&mkt=en-us&safeSearch=Moderate&freshness=day";
   console.log("url: " + url);
 
   $.ajax({
@@ -107,20 +110,23 @@ var getArticles = function () {
       var innerHTML = "";
       console.log(data.value);
       for (var i = 0; i < data.value.length; i++) {
-        var source = data.value[i].provider[0].name;
-        var name = data.value[i].name;
-        var url = data.value[i].url;
-        var image = data.value[i].image;
-        var articleDiv = "<div class=\"articlecard\">" + source + ": ";
-        if (image) {
-           var imageUrl = image.thumbnail.contentUrl;
-           imageDiv = "<img class=\"articleimg\" src="+ imageUrl + "></img>";
-           console.log(imageDiv);
-           articleDiv += imageDiv;
+        var source = data.value[i].provider[0].name.toLowerCase();
+        console.log(source);
+        if (newsSources.includes(source)) {
+          var name = data.value[i].name;
+          var url = data.value[i].url;
+          var image = data.value[i].image;
+          var articleDiv = "<div class=\"articlecard\">" + source + ": ";
+          if (image) {
+             var imageUrl = image.thumbnail.contentUrl;
+             imageDiv = "<img class=\"articleimg\" src="+ imageUrl + "></img>";
+             console.log(imageDiv);
+             articleDiv += imageDiv;
+          }
+          articleDiv += "<a class=\"text\" href=" + url + ">" + name + "</a></div>";
+          articleDiv += "</div>"
+          innerHTML += articleDiv + " <br>";
         }
-        articleDiv += "<a class=\"text\" href=" + url + ">" + name + "</a></div>";
-        articleDiv += "</div>"
-        innerHTML += articleDiv + " <br>";
       }
       articles.html(innerHTML);
   	}
