@@ -2,11 +2,11 @@
 
 var express = require('express');
 var cookieParser = require('cookie-parser');
-var session = require('express-session'); 
+var session = require('express-session');
 // create app
 var app = express();
 // set up port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8000;
 
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
