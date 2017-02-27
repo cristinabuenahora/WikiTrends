@@ -1,15 +1,16 @@
 #!/bin/bash
 
-month=01
-mkdir "/nlp/data/sierray/"$month"12017"
+month=02
+#mkdir "/nlp/data/sierray/"$month"12017"
 mkdir "/nlp/data/sierray/"$month"22017"
 mkdir "/nlp/data/sierray/"$month"32017"
 mkdir "/nlp/data/sierray/"$month"42017"
 
-for day in "01" "02" "03" "04" "05" "06" "07" 
-do
-  bash downloadDay.sh $month $day 1
-done
+
+#for day in "01" "02" "03" "04" "05" "06" "07" 
+#do
+#  bash downloadDay.sh $month $day 1
+#done
 
 for day in "08" "09" "10" "11" "12" "13" "14"
 do
