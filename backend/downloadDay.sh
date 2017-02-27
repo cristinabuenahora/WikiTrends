@@ -12,8 +12,8 @@ for hour in ${hours[*]}
 do
   file="pageviews-2017"$month$day"-"$hour"0000"
   url="https://dumps.wikimedia.org/other/pageviews/2017/2017-"$month"/"$file.gz
-  wget $url -O "/nlp/data/sierray/pageviews/"$file.gz
-  gunzip "/nlp/data/sierray/pageviews/"$file.gz
-  grep ^en "/nlp/data/sierray/pageviews/"$file > "/nlp/data/sierray/"$month$week"2017/"$file
-  rm "/nlp/data/sierray/pageviews/"$file
+  wget $url -O "zipped/"$file.gz
+  gunzip "zipped/"$file.gz
+  grep ^en "zipped/"$file > "data/"$month$week"2017/"$file
+  rm "zipped/"$file
 done

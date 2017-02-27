@@ -36,7 +36,7 @@ def main():
           dayCount[title] = 0
         dayCount[title] += int(views)
       except:
-        x = 1
+        x=1
 
   s = ''
   for title in d:
