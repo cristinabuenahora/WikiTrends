@@ -230,13 +230,13 @@ div .text {
 
 .aboutbar {
   height: 3px;
-  width: 60%;
+  width: 50%;
   background-color: #4ECDC4;
-  margin: 30px 200px;
+  margin: 30px 250px;
 }
 
 .aboutcard {
-  margin: 20px 200px;
+  margin: 20px 250px;
   padding: 0 30px;
   text-align: left;
   font-size: 12px;
@@ -256,7 +256,7 @@ div .text {
   color: white;
   font-weight:normal;
   font-size: 40px;
-  margin: 0px 200px;
+  margin: 0px 250px;
   padding: 0px 60px;
   text-align: left;
 }
@@ -353,7 +353,7 @@ table {
   width: 75%;
   height: auto;
   display: block;
-  margin: auto;
+  margin: 0px 30px;
   align-self: center;
   align-items: center;
   align-content: center;
