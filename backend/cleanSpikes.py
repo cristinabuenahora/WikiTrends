@@ -35,7 +35,6 @@ s = ""
 countDict1 = open(sys.argv[3])
 countDict = open(sys.argv[2])
 
-
 for line in countDict1:
   splits = line.split("\t")
   try:
@@ -56,9 +55,24 @@ for line in countDict:
   except:
     x = 1
 
-acc = ""
+# create list of all max pagecounts
+# create dict of pagecounts to pagenames
+all_maxes=[]
+max_to_name={}
 for s in spikes:
-  acc += s + "\t" + spikes[s]
+  counts = spikes[s].split()
+  c_max = int(max(counts)) 
+  max_to_name[c_max] = s
+  all_maxes.append(c_max)
+
+# get the list into descending order
+all_maxes.sort()
+all_maxes.reverse()
+
+acc = ""
+for count in all_maxes:
+  name = max_to_name[count]
+  acc += name + "\t" + spikes[name]
 
 print acc
 

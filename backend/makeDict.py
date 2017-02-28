@@ -15,6 +15,7 @@ def main():
   currHour = 0
   dayCount = {}
   for filename in os.listdir(sys.argv[1]):
+    print filename
     if currHour == 23:
       for title in dayCount:
         if title not in d:
@@ -51,7 +52,6 @@ def main():
     if keep:
       s += t + '\n'
   print s
-
 
 if __name__ == '__main__':
   main()
