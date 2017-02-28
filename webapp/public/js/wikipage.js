@@ -108,25 +108,24 @@ var getArticles = function () {
     success: function (data) {
       var articles = $('#articles');
       var innerHTML = "";
-      console.log(data.value);
+      //console.log(data.value);
       for (var i = 0; i < data.value.length; i++) {
-        var source = data.value[i].provider[0].name.toLowerCase();
-        console.log(source);
-        if (newsSources.includes(source)) {
+        var source = data.value[i].provider[0].name;
+        //console.log(source);
+        //if (newsSources.includes(source.toLowerCase())) {
           var name = data.value[i].name;
           var url = data.value[i].url;
           var image = data.value[i].image;
-          var articleDiv = "<div class=\"articlecard\">" + source + ": ";
+          var articleDiv = "<div class=\"articlecard\">";
           if (image) {
              var imageUrl = image.thumbnail.contentUrl;
-             imageDiv = "<img class=\"articleimg\" src="+ imageUrl + "></img>";
-             console.log(imageDiv);
+             imageDiv = "<img class=\"articleimg\" src="+ imageUrl + ">";
              articleDiv += imageDiv;
           }
-          articleDiv += "<a class=\"text\" href=" + url + ">" + name + "</a></div>";
-          articleDiv += "</div>"
-          innerHTML += articleDiv + " <br>";
-        }
+          articleDiv += "<a class=\"innercard text\" href=" + url + " target=\"_blank\">" + source + ": " + name + "</a></div>";
+          articleDiv += "</div><br>"
+          innerHTML += articleDiv + "";
+        //}
       }
       articles.html(innerHTML);
   	}

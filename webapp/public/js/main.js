@@ -37,7 +37,7 @@ var getImages = function () {
 
             for (var i = 1; i < numberOfPages - 1; i++) {
               if ($("#title" + i).html() === (title)) {
-                var inner = $("#wikipage" + i).html() + "<div class=\"text\">" + desc + "</div> </div>";
+                var inner = $("#wikipage" + i).html() + "<br><div class=\"text\">" + desc + "</div> </div>";
                 $("#wikipage" + i).html(inner);
                 var newHTML = "<img src=\"" + img + "\" class=\"cardimg\">" + "<div class=\"innercard\">" + $("#wikicard" + i).html();
                 $("#wikicard" + i).html(newHTML);

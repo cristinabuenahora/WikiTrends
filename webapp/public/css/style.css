@@ -55,7 +55,7 @@
   word-wrap: normal;
   display: inline-block;
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: normal;
   line-height: 38px;
   letter-spacing: .1rem;
@@ -63,7 +63,6 @@
   white-space: nowrap;
   border-bottom: 2px solid #bbb;
   border-right: 2px solid #bbb;
-  /*box-shadow: 10px 10px 5px #888;*/
   cursor: pointer;
   box-sizing: border-box;
   word-wrap: normal;
@@ -88,6 +87,10 @@
   font-size: 16px;
   font-weight: normal;
   letter-spacing: .1rem;
+  text-decoration: none;
+}
+
+a {
   text-decoration: none;
 }
 
@@ -121,7 +124,6 @@ div .navbutton {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  cursor: pointer;
   box-sizing: border-box;
   word-wrap: normal;
   height: auto;
@@ -165,6 +167,14 @@ div .navbutton {
   font-weight: normal;
 }
 
+.wikipagebar {
+  height: 3px;
+  width: 80%;
+  background-color: #4ECDC4;
+  margin: 30px 100px;
+  padding: 0px 50px;
+}
+
 .wikipageheader {
   color: white;
   font-weight: normal;
@@ -178,6 +188,7 @@ div .navbutton {
   align-items: center;
   padding: 0px 10px;
   max-width: 600px;
+  line-height: normal;
 }
 
 .timeline {
@@ -214,6 +225,7 @@ div .text {
   text-align: left;
   vertical-align: top;
   color: white;
+  line-height: normal;
 }
 
 .aboutbar {
@@ -261,6 +273,7 @@ div .text {
   font-size: 18px;
   text-transform: none;
   font-weight: normal;
+  line-height: normal;
 }
 
 .nametext {
@@ -290,8 +303,8 @@ div .text {
 }
 
 .aboutimg {
-  height: 200px;
-  width: auto;
+  height: auto;
+  width: 200px;
   padding: 5px;
   display: block;
   margin: 0 auto;
@@ -359,7 +372,7 @@ table {
 .articlescard {
   margin: 20px 100px;
   padding: 0 50px;
-  font-size: ;
+  font-size: 14px;
   font-weight: normal;
   line-height: 30px;
   letter-spacing: .1rem;
@@ -370,33 +383,27 @@ table {
   word-wrap: normal;
   height: auto;
   width: auto;
-  display: flex;
-  align-self: center;
-  align-content: center;
 }
 
 .articlecard {
-  margin: 20px;
-  font-size: ;
+  text-align: left;
+  font-size: 14px;
   font-weight: normal;
-  line-height: 30px;
+  line-height: normal;
   letter-spacing: .1rem;
   text-decoration: none;
   white-space: nowrap;
-  cursor: pointer;
+  word-break: normal;
   box-sizing: border-box;
   word-wrap: normal;
   height: auto;
-  width: 33%;
-  word-break: normal;
-  white-space: normal;
-  text-align: center;
-  vertical-align: top;
-  color: white;
+  display: flex;
+  vertical-align: middle;
+  align-self: center;
 }
 
 .articleimg {
-  width: 125px;
+  width: auto;
   height: auto;
   padding: 5px;
   display: block;
@@ -409,7 +416,7 @@ table {
   word-wrap: normal;
   word-break: normal;
   white-space: normal;
-  text-align: center;;
+  text-align: center;
   vertical-align: top;
   color: white;
 }
