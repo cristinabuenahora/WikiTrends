@@ -66,6 +66,7 @@
   cursor: pointer;
   box-sizing: border-box;
   word-wrap: normal;
+  cursor: auto;
 }
 
 .bar {
@@ -388,7 +389,7 @@ table {
   height: 400px;
   width: auto;
   overflow: auto;
-  background-color: #687787;
+  /*background-color: #687787;*/
 }
 
 .articlecard {
@@ -403,10 +404,12 @@ table {
   box-sizing: border-box;
   word-wrap: normal;
   height: auto;
-  display: flex;
   vertical-align: middle;
   align-self: center;
   margin-top: 10px;
+  display: flex;
+  align-self: center;
+  align-content: center;
 }
 
 .articleimg {
@@ -414,7 +417,7 @@ table {
   height: auto;
   padding: 5px;
   display: block;
-  margin: 0 auto;
+  margin: 0 20px;
 }
 
 .footer {

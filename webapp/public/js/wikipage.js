@@ -123,7 +123,8 @@ var getArticles = function () {
              imageDiv = "<img class=\"articleimg\" src="+ imageUrl + ">";
              articleDiv += imageDiv;
           }
-          articleDiv += "<a class=\"innercard text\" href=" + url + " target=\"_blank\">" + source + ": " + name + "</a></div>";
+          var articleStr = "<div class=\"text\"><i>" + source + "</i></div>" + "<div class=\"text\">" + name + "</div>";
+          articleDiv += "<a class=\"innercard\" href=" + url + " target=\"_blank\">" + articleStr + "</a></div>";
           articleDiv += "</div>"
           innerHTML += articleDiv + "";
         //}
