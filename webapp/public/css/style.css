@@ -94,6 +94,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: white;
+}
+
 div .navbutton {
   display: inline-block;
   height: 38px;

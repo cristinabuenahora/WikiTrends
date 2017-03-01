@@ -17,6 +17,7 @@ $.get( "/getData", function(data) {
 
         // add pagename
         var pagename = pageData[id].split('\t')[0];
+        document.getElementById('pagename').href += "https://en.wikipedia.org/wiki/" + pagename;
         pagename = pagename.split('_').join(' ');
         document.getElementById('pagename').innerHTML += pagename;
 
