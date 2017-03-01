@@ -108,7 +108,7 @@ var getArticles = function () {
     headers: {"Ocp-Apim-Subscription-Key": "a3a6b62b91864305997790635e06cbcf"},
     success: function (data) {
       var articles = $('#articles');
-      var innerHTML = "";
+      var innerHTML = articles.html();
       //console.log(data.value);
       for (var i = 0; i < data.value.length; i++) {
         var source = data.value[i].provider[0].name;
@@ -124,7 +124,7 @@ var getArticles = function () {
              articleDiv += imageDiv;
           }
           articleDiv += "<a class=\"innercard text\" href=" + url + " target=\"_blank\">" + source + ": " + name + "</a></div>";
-          articleDiv += "</div><br>"
+          articleDiv += "</div>"
           innerHTML += articleDiv + "";
         //}
       }

@@ -385,8 +385,10 @@ table {
   cursor: pointer;
   box-sizing: border-box;
   word-wrap: normal;
-  height: auto;
+  height: 400px;
   width: auto;
+  overflow: auto;
+  background-color: #687787;
 }
 
 .articlecard {
@@ -404,6 +406,7 @@ table {
   display: flex;
   vertical-align: middle;
   align-self: center;
+  margin-top: 10px;
 }
 
 .articleimg {
