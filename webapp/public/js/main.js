@@ -39,7 +39,7 @@ var getImages = function () {
               if ($("#title" + i).html() === (title)) {
                 var inner = $("#wikipage" + i).html() + "<br><div class=\"text\">" + desc + "</div> </div>";
                 $("#wikipage" + i).html(inner);
-                var newHTML = "<img src=\"" + img + "\" class=\"cardimg\">" + "<div class=\"innercard\">" + $("#wikicard" + i).html();
+                var newHTML = "<div class=\"imgwrap\"><div class=\"imgtext\">" + i + "</div><img src=\"" + img + "\" class=\"cardimg\"></div>" + "<div class=\"innercard\">" + $("#wikicard" + i).html();
                 $("#wikicard" + i).html(newHTML);
 
               }

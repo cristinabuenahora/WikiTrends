@@ -137,9 +137,26 @@ div .navbutton {
   align-content: center;
 }
 
+.imgwrap:hover .imgtext {
+  visibility: visible;
+  opacity: 1;
+}
+
 .cardimg {
   height: auto;
   width: 200px;
+}
+
+.imgtext {
+  color: white;
+  font-size: 40px;
+  background: #292f36;
+  visibility: hidden;
+  opacity: 0;
+  display: block;
+  position:absolute;
+  width:inherit;
+  height:inherit;
 }
 
 .innercard {
