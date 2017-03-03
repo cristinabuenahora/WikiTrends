@@ -388,13 +388,10 @@ table {
 }
 
 .image {
-  width: 75%;
+  width: 600px;
   height: auto;
   display: block;
-  margin: 0px 30px;
-  align-self: center;
-  align-items: center;
-  align-content: center;
+  margin: 0px auto;
 }
 
 .chart {
