@@ -201,7 +201,7 @@ div .navbutton {
   border-style: solid;
   float: right;
   width: inherit;
-  padding: 2px 10px; 
+  padding: 2px 10px;
 }
 
 .wikipagebar {
@@ -267,13 +267,14 @@ div .text {
 
 .aboutbar {
   height: 3px;
-  width: 50%;
+  width: 75%;
   background-color: #4ECDC4;
-  margin: 30px 250px;
+  margin: 30px 100px;
+  padding: 0px 50px;
 }
 
 .aboutcard {
-  margin: 20px 250px;
+  margin: 20px 100px;
   padding: 0 30px;
   text-align: left;
   font-size: 12px;
@@ -293,13 +294,13 @@ div .text {
   color: white;
   font-weight:normal;
   font-size: 40px;
-  margin: 0px 250px;
+  margin: 0px 100px;
   padding: 0px 60px;
   text-align: left;
 }
 
 .abouttext {
-  width: 80%;
+  width: 90%;
   word-wrap: normal;
   word-break: normal;
   white-space: normal;
@@ -352,7 +353,7 @@ table {
 }
 
 .abouttable {
-  width: 85%;
+  width: 95%;
 }
 
 .difimg {
