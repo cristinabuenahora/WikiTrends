@@ -2,9 +2,12 @@
 
 # find the hour, an hour ago, seems to be london based?
 hour=`date -d '7 hours ago' +%H`
-day=`date +%d`
-month=`date +%m`
-monthb=$month
+#day=`date +%d`
+#month=`date +%m`
+#monthb=$month
+day=28
+month=02
+monthb=02
 year=`date +%Y`
 
 # find the week and week before in a long string of for loops
@@ -53,15 +56,15 @@ else
   yearb=$year
 fi
 
-bash downloadHour.sh $hour $day $week $month $year
-python makeDict.py "data/"$month$week$year > "data/"$month$week$year"/countDict"
-python spikeFinder.py "data/"$month$week$year"/countDict" > "data/"$month$week$year"/spikes"
+#bash downloadHour.sh $hour $day $week $month $year
+#python makeDict.py "/nlp/data/sierray/"$month$week$year > "data/"$month$week$year"/countDict"
+#python spikeFinder.py "data/"$month$week$year"/countDict" > "data/"$month$week$year"/spikes"
 
 countDict1="data/"$month$week$year"/countDict"
 countDict2="data/"$monthb$weekb$yearb"/countDict"
 datafile="../webapp/data/test.txt"
 
-sort -k2 -n -r "data/"$month$week$year"/spikes" > "data/"$month$week$year"/topSpikes"
+#sort -k2 -n -r "data/"$month$week$year"/spikes" > "data/"$month$week$year"/topSpikes"
 python addDate.py $month $week $monthb $weekb > $datafile
 python cleanSpikes.py "data/"$month$week$year"/topSpikes" $countDict1 $countDict2 >> $datafile
 
