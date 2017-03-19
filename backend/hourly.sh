@@ -2,13 +2,15 @@
 
 # find the hour, an hour ago, seems to be london based?
 hour=`date -d '7 hours ago' +%H`
-#day=`date +%d`
-#month=`date +%m`
-#monthb=$month
-day=28
-month=02
-monthb=02
+day=`date +%d`
+month=`date +%m`
+monthb=$month
+#day=28
+#month=03
+#monthb=02
 year=`date +%Y`
+
+echo "hour:"$hour" day:"$day" month:"$month
 
 # find the week and week before in a long string of for loops
 for d in "01" "02" "03" "04" "05" "06" "07"
@@ -56,16 +58,44 @@ else
   yearb=$year
 fi
 
-#bash downloadHour.sh $hour $day $week $month $year
-#python makeDict.py "/nlp/data/sierray/"$month$week$year > "data/"$month$week$year"/countDict"
-#python spikeFinder.py "data/"$month$week$year"/countDict" > "data/"$month$week$year"/spikes"
+bash downloadHour.sh $hour $day $week $month $year
 
-countDict1="data/"$month$week$year"/countDict"
+echo "downloaded an hour"
+
+dataDir="data/"$month$week$year
+resultsDir="data/"$month$week$year
+countDict1=$resultsDir"/countDict"
 countDict2="data/"$monthb$weekb$yearb"/countDict"
+spikes=$resultsDir"/spikes"
+topSpikes=$resultsDir"/topSpikes"
 datafile="../webapp/data/test.txt"
+pageviewfile=$resultsDir"/pageviews-"$year$month$day"-"$hour"0000"
 
-#sort -k2 -n -r "data/"$month$week$year"/spikes" > "data/"$month$week$year"/topSpikes"
+makeCountDict=1
+
+# figure out if this is a new week
+if [ $day == 01 ] || [ $day == 07 ] || [ $day == 14 ] || [ $day == 21 ] || [ $makeCountDict == 1 ];then
+  if [ $hour == 00 ] || [ $makeCountDict == 1 ]; then 
+    echo "making countDict file"
+    mkdir "data/"$month$week$year
+    python makeDict.py $dataDir > $countDict1
+  fi
+else
+  new_day=0
+  if [ $hour == 00 ]; then
+    new_day=1
+  fi
+  echo "updating counts"
+  python updateCounts.py $countDict1 $pageviewfile $new_day 
+fi
+
+echo "finding spikes"
+python spikeFinder.py $countDict1 > $spikes
+
+sort -k2 -n -r $spikes > $topSpikes
+
+echo "preparing output file"
 python addDate.py $month $week $monthb $weekb > $datafile
-python cleanSpikes.py "data/"$month$week$year"/topSpikes" $countDict1 $countDict2 >> $datafile
+python cleanSpikes.py $topSpikes $countDict1 $countDict2 >> $datafile
 
-echo "downloaded and analyzed an hour"
+echo "finished"
