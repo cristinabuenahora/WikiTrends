@@ -12,11 +12,17 @@
     </header>
     <div class="row">
       <br>
+      <div class="aboutheader">The Wikipedia Dataset</div>
+      <div class="aboutbar"></div>
+      <div class="aboutcard">
+        <div class="abouttext">Each hour, Wikipedia publishes a .gz file with the pageview statistics for all Wikipedia pages. The hourly date file has over 5 million rows, each showing the Wikipedia article name and the number of requests the page got during that hour.
+        </div>
+      </div>
+      <br><br>
       <div class="aboutheader">Our Algorithm</div>
       <div class="aboutbar"></div>
       <div class="aboutcard">
-        <div class="abouttext">We take Wikipedia’s publicly stored pageview data and find what’s trending. We do so through a series of bash scripts that download all the files and create a dictionary with the pagename and aggregated hourly data. To find the spikes, we create an average of the previous daily pageviews for that page and compare it to its current pageviews to determine whether the page has had a huge percent increase or numerical increase. 
-        </div>
+        <image src="images/algorithm.png" class="image"/>
       </div>
       <br><br>
       <div class="aboutheader">News Articles</div>
