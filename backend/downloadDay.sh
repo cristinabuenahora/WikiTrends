@@ -4,6 +4,7 @@
 # arg 2 is the day
 # arg 3 is the week
 
+
 month=$1
 day=$2
 week=$3
@@ -18,5 +19,5 @@ do
   wget $url -O $zippedDir$file.gz
   gunzip $zippedDir$file.gz
   grep ^en $zippedDir$file > $unzippedDir$file
-  rm $zippedDir$file
+  rm $zippedDir"*"
 done

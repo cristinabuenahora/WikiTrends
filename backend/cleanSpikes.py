@@ -26,7 +26,7 @@ for line in f:
     if not delete:
       spikes[title] = count
       numSpikes += 1 
-    if numSpikes > 15:
+    if numSpikes > 40:
       break
   except:
     x = 1
@@ -41,7 +41,7 @@ for line in countDict1:
     t = splits[0]
     counts = splits[1]
     if t in spikes:
-      spikes[t] = counts
+      spikes[t] = counts.split("\n")[0]
   except:
     x = 1
   
@@ -51,7 +51,7 @@ for line in countDict:
     t = splits[0]
     counts = splits[1]
     if t in spikes:
-      spikes[t] += " " + counts
+      spikes[t] += counts
   except:
     x = 1
 
