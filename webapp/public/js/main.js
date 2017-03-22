@@ -27,11 +27,10 @@ var getImages = function () {
             // remove cite error
             blurb.find('.mw-ext-cite-error').remove();
 
-            console.log(blurb[0].innerHTML);
             img = blurb[0].innerHTML.split('src=\"');
-            console.log(img);
+            console.log("IMAGE" + img);
             img = "https:" + img[1].split(' ')[0];
-            if (img.includes("Ambox_important") || img.includes("Wiki_letter_w.svg")) {
+            if (img.includes("Ambox_important") || img.includes("Wiki_letter_w.svg") || img.includes("Question_book-new.svg")) {
               imgArr = blurb[0].innerHTML.split('src=\"');
               for (var i = 0; i < imgArr.length; i++) {
                 if (imgArr[i].includes("width=\"220\"")) {
@@ -42,9 +41,10 @@ var getImages = function () {
             }
 
             desc = blurb[0].innerHTML.split('<p>');
+            if (desc.length == 1) {
+              desc = blurb[0].innerHTML.split('<p align="justify">');
+            }
             desc = desc[1].split('</p>')[0];
-
-            //console.log(desc);
 
             for (var i = 1; i < numberOfPages - 1; i++) {
               if ($("#title" + i).html() === (title)) {
