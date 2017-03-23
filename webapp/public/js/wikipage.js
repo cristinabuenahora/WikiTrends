@@ -79,6 +79,9 @@ var getDescription = function () {
           blurb.find('.mw-ext-cite-error').remove();
 
           desc = blurb[0].innerHTML.split('<p>');
+          if (desc.length == 1) {
+            desc = blurb[0].innerHTML.split('<p align="justify">');
+          }
           desc = desc[1].split('</p>')[0];
 
           console.log(desc);
