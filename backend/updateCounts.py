@@ -10,7 +10,7 @@ arguments
 import sys
 
 def main():
-  countDict_file = open(sys.argv[1])
+  countDict_file = open(sys.argv[1], "r")
   pagecount = open(sys.argv[2])
   
   # read countDict into a dictionary
@@ -20,6 +20,7 @@ def main():
     if len(s) > 1:
       countDict[s[0]] = s[1]
       max_counts = len(s[1].split())
+
 
   # for each entry in the pagecount file, see if it's in countDict
   for page in pagecount:
@@ -51,11 +52,13 @@ def main():
       countDict[pagename] += " " + hour_count
             
   # read back into countDict file
-  c = ""
+  c = "hi"
+  countDict_file.close()
+  f = open(sys.argv[1], "w")
   for page in countDict:
-    c += page + "\t" + countDict[page]
-  print c
-           
+    x = 0
+    f.write(page + "\t" + countDict[page])
+
 
 if __name__ == '__main__':
   main()
