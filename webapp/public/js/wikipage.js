@@ -1,9 +1,18 @@
 //console.log('in chart.js');
 
-$.get( "/getData", function(data) {
-    var pageData = data.pageData;
+$.get( '/getData', function(data) {
+    var pageData = undefined;
     //var month = data.month;
-    var id = parseInt(window.location.href.split('?')[1]);
+    var typeId = window.location.href.split('?')[1];
+    var type = typeId.split('_')[0];
+    var id = typeId.split('_')[1];
+    if (type === 'now') {
+      pageData = data.nowData;
+    } else if (type === 'week') {
+      pageData = data.weekData;
+    } else if (type === 'month') {
+      pageData = data.monthData;
+    }
 
     google.charts.load('current', {'packages':['line']});
     google.charts.setOnLoadCallback(drawChart);
@@ -50,7 +59,12 @@ $.get( "/getData", function(data) {
         chart.draw(data, options);
 
         getDescription();
-        getArticles();
+        if (type === 'now') {
+          getArticles();
+        } else {
+          document.getElementById('newscard').remove();
+          document.getElementById('articles').remove();
+        }
     }
 });
 
@@ -95,6 +109,21 @@ var getDescription = function () {
 }
 
 var getArticles = function () {
+
+  // const client = webhoseio.config({token: '3f07ddf5-10b1-40b8-95d5-78492557f2c8'});
+  // client.query('filterWebData', {q: 'github'})
+  //   .then(output => {
+  //     console.log(output['posts'][0]['text']); // Print the text of the first post
+  //     console.log(output['posts'][0]['published']); // Print the text of the first post publication date
+  // });
+  //
+  // // Get the next batch of posts
+  // client.getNext()
+  //   .then(output => {
+  //     console.log(output['posts'][0]['thread']['site']); // Print the site of the first post
+  //   });
+  //
+  // console.log("------------------------");
 
   var newsSources = "npr pbs bbc cnn nbc abc fox hannity limbaugh glenn beck";
 

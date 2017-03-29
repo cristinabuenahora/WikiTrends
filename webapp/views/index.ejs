@@ -17,15 +17,20 @@
       <% include partials/header %>
     </header>
     <div class="bar">
-      <img src="images/trendingnowon.png" class="trendingimg"></img>
+      <%if (type === "now") { %>
+        <img src="images/trendingnowon.png" class="trendingimg"></img>
+      <% } else if (type === "week") { %>
+        <img src="images/trendingweek.png" class="trendingimg"></img>
+      <% } else if (type === "month") { %>
+        <img src="images/trendingmonth.png" class="trendingimg"></img>
+      <% } %>
     </div>
-    <br>
     <div class="row">
       <ul>
         <% for (var i = 1; i < numberOfPages - 1; i++) { %>
           <div id="wikicard<%=i%>" class="card">
             <!--<img src="/images/placeholder.png" class="cardimg"></img>-->
-            <a href="/wikipage?<%=i%>" id="wikipage<%=i%>" class="cardtext">
+            <a href="/wikipage?<%=type%>_<%=i%>" id="wikipage<%=i%>" class="cardtext">
               <div id="title<%=i%>" class="cardtext"><%= wikiPageNames[i] %></div>
             </a>
           </div>
