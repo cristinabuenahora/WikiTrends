@@ -43,9 +43,9 @@ def main():
  
   for page in d:
     counts = d[page].split()
-    # average the first two thirds of the list
+    # average the first half of the list
     avg1 = 0
-    idx = int(math.floor(len(counts) * (2.0/3)))
+    idx = int(math.floor(len(counts) * (1.0/2)))
     for i in range(0, idx):
       avg1 += int(counts[i])
     avg1 = avg1/idx

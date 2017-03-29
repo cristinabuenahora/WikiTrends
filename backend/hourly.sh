@@ -69,7 +69,7 @@ countDict1=$resultsDir"/countDict"
 countDict2="data/"$monthb$weekb$yearb"/countDict"
 spikes=$resultsDir"/spikes"
 topSpikes=$resultsDir"/topSpikes"
-datafile="../webapp/data/test.txt"
+datafile="../webapp/data/now.txt"
 pageviewfile=$resultsDir"/pageviews-"$year$month$day"-"$hour"0000"
 
 makeCountDict=0

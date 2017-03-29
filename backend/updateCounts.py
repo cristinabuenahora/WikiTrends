@@ -10,7 +10,7 @@ arguments
 import sys
 
 def main():
-  countDict_file = open(sys.argv[1], "w+")
+  countDict_file = open(sys.argv[1], "r")
   pagecount = open(sys.argv[2])
   
   # read countDict into a dictionary
@@ -53,9 +53,11 @@ def main():
             
   # read back into countDict file
   c = "hi"
+  countDict_file.close()
+  f = open(sys.argv[1], "w")
   for page in countDict:
     x = 0
-    countDict_file.write(page + "\t" + countDict[page])
+    f.write(page + "\t" + countDict[page])
 
 
 if __name__ == '__main__':
