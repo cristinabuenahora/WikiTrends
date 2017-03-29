@@ -1,7 +1,7 @@
 # Script that downloads the past hour of data, and redoes the analysis
 
 # find the hour, an hour ago, seems to be london based?
-hour=`date -d '7 hours ago' +%H`
+hour=`date -d '5 hours ago' +%H`
 day=`date +%d`
 month=`date +%m`
 monthb=$month
@@ -71,7 +71,7 @@ topSpikes=$resultsDir"/topSpikes"
 datafile="../webapp/data/test.txt"
 pageviewfile=$resultsDir"/pageviews-"$year$month$day"-"$hour"0000"
 
-makeCountDict=1
+makeCountDict=0
 
 # figure out if this is a new week
 if [ $day == 01 ] || [ $day == 07 ] || [ $day == 14 ] || [ $day == 21 ] || [ $makeCountDict == 1 ];then
