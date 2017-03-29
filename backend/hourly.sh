@@ -58,6 +58,7 @@ else
   yearb=$year
 fi
 
+
 bash downloadHour.sh $hour $day $week $month $year
 
 echo "downloaded an hour"
