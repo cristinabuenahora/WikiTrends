@@ -87,7 +87,8 @@ else
     new_day=1
   fi
   echo "updating counts"
-  python updateCounts.py $countDict1 $pageviewfile $new_day
+  echo $countDict1
+  python updateCounts.py $countDict1 $pageviewfile $new_day > $countDict1
 fi
 
 rm $pageviewfile
