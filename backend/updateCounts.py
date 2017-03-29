@@ -21,6 +21,7 @@ def main():
       countDict[s[0]] = s[1]
       max_counts = len(s[1].split())
 
+
   # for each entry in the pagecount file, see if it's in countDict
   for page in pagecount:
     splits = page.split('\t')

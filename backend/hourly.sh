@@ -1,7 +1,7 @@
 # Script that downloads the past hour of data, and redoes the analysis
 
 # find the hour, an hour ago, seems to be london based?
-hour=`date -d '5 hours ago' +%H`
+hour=`date -d '4 hours ago' +%H`
 day=`date +%d`
 month=`date +%m`
 monthb=$month
@@ -87,8 +87,10 @@ else
     new_day=1
   fi
   echo "updating counts"
-  python updateCounts.py $countDict1 $pageviewfile $new_day 
+  python updateCounts.py $countDict1 $pageviewfile $new_day
 fi
+
+rm $pageviewfile
 
 echo "finding spikes"
 python spikeFinder.py $countDict1 $countDict2 > $spikes
