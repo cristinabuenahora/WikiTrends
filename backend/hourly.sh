@@ -69,7 +69,8 @@ countDict1=$resultsDir"/countDict"
 countDict2="data/"$monthb$weekb$yearb"/countDict"
 spikes=$resultsDir"/spikes"
 topSpikes=$resultsDir"/topSpikes"
-datafile="../webapp/data/now.txt"
+frontendfile="../webapp/data/now.txt"
+datafile="data/"$month$week$year"/final"
 pageviewfile=$resultsDir"/pageviews-"$year$month$day"-"$hour"0000"
 
 makeCountDict=0
@@ -101,5 +102,7 @@ sort -k2 -n -r $spikes > $topSpikes
 echo "preparing output file"
 python addDate.py $month $week $monthb $weekb > $datafile
 python cleanSpikes.py $topSpikes $countDict1 $countDict2 >> $datafile
+
+cp $datafile $frontendfile
 
 echo "finished"
