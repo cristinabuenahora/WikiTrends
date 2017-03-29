@@ -51,13 +51,13 @@ def main():
         countDict[pagename] += " 0 "
       countDict[pagename] += " " + hour_count
             
+  countDict_file.close()
   # read back into countDict file
+  f = open(sys.argv[1],'w')
   c = "hi"
   for page in countDict:
-    print page + "\t" + countDict[page].split("\n")[0]
+    f.write(page + "\t" + countDict[page].split("\n")[0])
 
-  f = open(sys.argv[1],'w')
-  f.write(c)
   f.close()   
 
 if __name__ == '__main__':
