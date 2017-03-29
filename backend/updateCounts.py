@@ -54,9 +54,8 @@ def main():
   # read back into countDict file
   c = ""
   for page in countDict:
-    c += page + "\t" + countDict[page]
-  print c
-           
+    print page + "\t" + countDict[page].split("\n")[0]
+   
 
 if __name__ == '__main__':
   main()
