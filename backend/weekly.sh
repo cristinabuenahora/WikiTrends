@@ -52,4 +52,4 @@ else
   yearb=$year
 fi
 
-cp data/$month$week$year/final ../webapp/data/week.txt
+cp data/$monthb$weekb$yearb/final ../webapp/data/week.txt
