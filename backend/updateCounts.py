@@ -55,7 +55,7 @@ def main():
   c = "hi"
   for page in countDict:
     x = 0
-    countDict_file.write(page + "\t" + countDict[page])
+    countDict_file.write(page + "\t" + countDict[page].split('\n')[0])
 
 
 if __name__ == '__main__':
