@@ -19,34 +19,36 @@ def main():
     s = line.split('\t')
     if len(s) > 1:
       countDict[s[0]] = s[1]
+      max_counts = len(s[1].split())
 
   # for each entry in the pagecount file, see if it's in countDict
   for page in pagecount:
     splits = page.split('\t')
-    if len(splits) > 1:
-      pagename = splits[0]
-      hour_count = splits[1]
-      seen = False
-      for dict_pagename in countDict:
-        if dict_pagename == pagename:
-          if sys.argv[3] == "1":
-            countDict[dict_pagename] += " " + hour_count
-            seen = True
-            break
-          else:
-            numbers = countDict[dict_pagename]
-            numbers_list = numbers.split()
-            last_number = int(numbers_list[len(numbers_list)])
-            last_number += hour_count
-            numbers_list[len(numbers_list)] = str(last_number)
-            numbers = numbers_list.join(" ")
-            countDict[dict_pagename] = numbers
-            seen = True
-            break
-      # add page to countDict with right amount of days before :/
-      if not seen:
-        countDict[pagename] = hour_count
-  
+    if len(splits) < 2:
+      continue
+    pagename = splits[0]
+    hour_count = splits[1]
+    seen = False
+ 
+    if dict_pagename in countDict:
+      countDict[dict_pagename] = countDict[dict_pagename].split('\n')[0]
+      # if its a new day, just add to countDict counts
+      if sys.argv[3] == "1":
+        countDict[dict_pagename] += " " + hour_count
+      # if its not a new day, add this to the last count
+      else:
+        counts = countDict[dict_pagename].split()
+        counts[len(counts)] = str(int(counts[len(counts)]) + str(hour_count))
+        countDict[dict_pagename] = counts.join(" ")
+      countDict[dict_pagename] += '\n'
+    # add page to countDict with right amount of days before :/
+    else: 
+      countDict[pagename] = "0"
+      for i in range(2, max_counts):
+        countDict += ' 0'
+      if sys.argv[3] == "1":
+        countDict[pagename] += " 0 "
+      countDict[pagename] += " " + hour_count
             
   # read back into countDict file
   c = ""
