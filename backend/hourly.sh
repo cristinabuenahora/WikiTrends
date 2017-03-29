@@ -91,7 +91,7 @@ else
 fi
 
 echo "finding spikes"
-python spikeFinder.py $countDict1 > $spikes
+python spikeFinder.py $countDict1 $countDict2 > $spikes
 
 sort -k2 -n -r $spikes > $topSpikes
 
