@@ -1,7 +1,7 @@
 # Script that downloads the past hour of data, and redoes the analysis
 
 # find the hour, an hour ago, seems to be london based?
-hour=`date -d '7 hours ago' +%H`
+hour=`date -d '5 hours ago' +%H`
 day=`date +%d`
 month=`date +%m`
 monthb=$month
@@ -57,6 +57,7 @@ if [ $monthb == 12 ]; then
 else
   yearb=$year
 fi
+
 
 bash downloadHour.sh $hour $day $week $month $year
 
