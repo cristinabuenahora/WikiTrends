@@ -1,7 +1,7 @@
 # Script that downloads the past hour of data, and redoes the analysis
 
 # find the hour, an hour ago, seems to be london based?
-hour=`date -d '7 hours ago' +%H`
+hour=`date -d '4 hours ago' +%H`
 day=`date +%d`
 month=`date +%m`
 monthb=$month
@@ -58,6 +58,7 @@ else
   yearb=$year
 fi
 
+
 bash downloadHour.sh $hour $day $week $month $year
 
 echo "downloaded an hour"
@@ -68,10 +69,10 @@ countDict1=$resultsDir"/countDict"
 countDict2="data/"$monthb$weekb$yearb"/countDict"
 spikes=$resultsDir"/spikes"
 topSpikes=$resultsDir"/topSpikes"
-datafile="../webapp/data/test.txt"
+datafile="../webapp/data/now.txt"
 pageviewfile=$resultsDir"/pageviews-"$year$month$day"-"$hour"0000"
 
-makeCountDict=1
+makeCountDict=0
 
 # figure out if this is a new week
 if [ $day == 01 ] || [ $day == 07 ] || [ $day == 14 ] || [ $day == 21 ] || [ $makeCountDict == 1 ];then
@@ -86,11 +87,14 @@ else
     new_day=1
   fi
   echo "updating counts"
-  python updateCounts.py $countDict1 $pageviewfile $new_day 
+  echo $countDict1
+  python updateCounts.py $countDict1 $pageviewfile $new_day
 fi
 
+rm $pageviewfile
+
 echo "finding spikes"
-python spikeFinder.py $countDict1 > $spikes
+python spikeFinder.py $countDict1 $countDict2 > $spikes
 
 sort -k2 -n -r $spikes > $topSpikes
 
