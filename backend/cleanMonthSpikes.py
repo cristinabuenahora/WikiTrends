@@ -4,10 +4,7 @@ import os
 '''
 Filters out the spammy spikes, adds them to a list of files with the page counts for the last week
 arg1 : file of month topSpikes, format: title tab count
-arg2 : file of topspikes from week 1
-arg3 : topSpikes week 2
-arg3: topSpikes week 3
-arg4: topspikes week 4
+arg2: month countDict
 '''
 
 f = open(sys.argv[1])
@@ -33,27 +30,15 @@ for line in f:
   except:
     x = 1
 
-s = ""
-countDict1 = open(sys.argv[3])
+# add pagecounts to the spikes from the countDict file
 countDict = open(sys.argv[2])
-
-for line in countDict1:
-  splits = line.split("\t")
-  try:
-    t = splits[0]
-    counts = splits[1]
-    if t in spikes:
-      spikes[t] = counts.split("\n")[0]
-  except:
-    x = 1
-  
 for line in countDict:
   splits = line.split("\t")
   try:
     t = splits[0]
     counts = splits[1]
     if t in spikes:
-      spikes[t] += counts
+      spikes[t] = counts.split("\n")[0]
   except:
     x = 1
 
@@ -74,7 +59,7 @@ all_maxes.reverse()
 acc = ""
 for count in all_maxes:
   name = max_to_name[count]
-  acc += name.replace("_", " ") + "\t" + spikes[name]
+  acc += name.replace("_", " ") + "\t" + spikes[name] + "\n"
 
 print acc
 
