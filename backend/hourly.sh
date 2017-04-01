@@ -73,7 +73,6 @@ topSpikes=$resultsDir"/topSpikes"
 frontendfile="../webapp/data/now.txt"
 datafile="data/"$month$week$year"/final"
 wikifile="data/"$month$week$year"/wiki"
-categoriesfile="data/"$month$week$year"/categories"
 pageviewfile=$resultsDir"/pageviews-"$year$month$day"-"$hour"0000"
 
 makeCountDict=0
@@ -107,8 +106,12 @@ python addDate.py $month $week $monthb $weekb > $datafile
 python cleanSpikes.py $topSpikes $countDict1 $countDict2 >> $datafile
 
 echo "scraping wiki"
-python wikiscrape.py $datafile $wikifile $categoriesfile
+python wikiscrape.py $datafile $wikifile
 
-cp $wikifile $frontendfile
+echo "getting categories"
+python category.py $wikifile $datafile
+
+
+cp $datafile $frontendfile
 
 echo "finished"
