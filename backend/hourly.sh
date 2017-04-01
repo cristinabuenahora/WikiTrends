@@ -17,6 +17,7 @@ for d in "01" "02" "03" "04" "05" "06" "07"
 do
 if [ $day == $d ]; then
   week=1
+  mkdir data/$month$week$year
 fi
 done
 
@@ -71,13 +72,15 @@ spikes=$resultsDir"/spikes"
 topSpikes=$resultsDir"/topSpikes"
 frontendfile="../webapp/data/now.txt"
 datafile="data/"$month$week$year"/final"
+wikifile="data/"$month$week$year"/wiki"
+categoriesfile="data/"$month$week$year"/categories"
 pageviewfile=$resultsDir"/pageviews-"$year$month$day"-"$hour"0000"
 
 makeCountDict=0
 
 # figure out if this is a new week
 if [ $day == 01 ] || [ $day == 07 ] || [ $day == 14 ] || [ $day == 21 ] || [ $makeCountDict == 1 ];then
-  if [ $hour == 00 ] || [ $makeCountDict == 1 ]; then 
+  if [ $hour == 00 ] || [ $makeCountDict == 1 ]; then
     echo "making countDict file"
     mkdir "data/"$month$week$year
     python makeDict.py $dataDir > $countDict1
@@ -103,6 +106,9 @@ echo "preparing output file"
 python addDate.py $month $week $monthb $weekb > $datafile
 python cleanSpikes.py $topSpikes $countDict1 $countDict2 >> $datafile
 
-cp $datafile $frontendfile
+echo "scraping wiki"
+python wikiscrape.py $datafile $wikifile $categoriesfile
+
+cp $wikifile $frontendfile
 
 echo "finished"
