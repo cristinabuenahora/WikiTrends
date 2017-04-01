@@ -72,7 +72,7 @@ all_maxes.reverse()
 acc = ""
 for count in all_maxes:
   name = max_to_name[count]
-  acc += name + "\t" + spikes[name]
+  acc += name.replace("_", " ") + "\t" + spikes[name]
 
 print acc
 

@@ -14,7 +14,7 @@ def main():
     for line in f.readlines()[1:]:
         # get pagename and page
         pagename = line.split('\t')[0]
-        pagename = pagename.replace('_', ' ')
+        #pagename = pagename.replace('_', ' ')
         page = wikipedia.page(pagename)
 
         # get summary
