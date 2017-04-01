@@ -1,7 +1,7 @@
 day=`date +%d`
-monthdir="data/"$month$year
+monthdir="data/month"
 
-# find the week and week before in a long string of for loops
+# find the week and 3 weeks before in a long string of for loops
 for d in "01" "02" "03" "04" "05" "06" "07"
 do
 if [ $day == $d ]; then
@@ -31,21 +31,75 @@ if [ $day == $d ]; then
 fi
 done
 
+monthb=`date -d '1 month ago' +%m`
 month=`date +%m`
-year=`date +%Y`
 
-weektopspikes=$month$week$year"/topSpikes"
+if [ $week == 1 ]; then
+  week2=4
+  week3=3
+  week4=2
+  m2=$monthb
+  m3=$monthb
+  m4=$monthb
+elif [ $week == 2 ]; then
+  week2=1
+  week3=4
+  week4=3
+  m2=$month
+  m3=$monthb
+  m4=$monthb
+elif [ $week == 3 ]; then
+  week2=2
+  week3=1
+  week4=4
+  m2=$month
+  m3=$month
+  m4=$monthb
+else
+  week2=3
+  week3=2
+  week4=1
+  m2=$month
+  m3=$month
+  m4=$month
+fi
+ 
+year=`date +%Y`
 monthSpikes=$monthdir"/spikes"
 monthtopspikes=$monthdir"/topSpikes"
 datafile=$monthdir"/final"
+wikifile=$monthdir"/wiki"
 
-# append week spikes to month spikes
-weektopspikes >> monthSpikes
+w1dir="data/"$month$week$year
+w2dir="data/"$m2$week2$year
+w3dir="data/"$m3$week3$year
+w4dir="data/"$m4$week4$year
 
+echo $w1dir
+echo $w2dir
+echo $w3dir
+echo $w4dir
+
+# create the monthly countDict
+python makeMonthCountDict.py $w1dir"/countDict" $w2dir"/countDict" $w3dir"/countDict" $w4dir"/countDict" > $monthdir"/countDict" 
+
+# put all week spikes in one file
+cat $w1dir"/topSpikes" > $monthSpikes
+cat $w2dir"/topSpikes" >> $monthSpikes
+cat $w3dir"/topSpikes" >> $monthSpikes
+cat $w4dir"/topSpikes" >> $monthSpikes
+
+#sort the top spikes
 sort -k2 -n -r $monthSpikes > $monthtopspikes
 
 echo "preparing output file"
-python addMonthDate.py $month > $datafile
-python arrangeMonthSpikes.py $monthtopspikes $topSpikes1 $topSpikes2 $topSpikes3 $topSpikes4 >> $datafile
+python addMonthDate.py $week4 $m4 $week3 $m3 $week2 $m2 $week $month > $datafile
+python cleanMonthSpikes.py $monthtopspikes $monthdir"/countDict" >> $datafile
 
-cp $datafile $frontendfile
+echo "scraping wiki"
+python wikiscrape.py $datafile $wikifile
+
+echo "getting categories"
+python category.py $wikifile $datafile
+
+cp $datafile "../webapp/data/month.txt"
