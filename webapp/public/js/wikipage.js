@@ -1,27 +1,47 @@
-//console.log('in chart.js');
+$(document).ready(function () {
 
-$.get( '/getData', function(data) {
-    var pageData = data.nowData;
-    //var month = data.month;
-    var typeId = window.location.href.split('?')[1];
-    var type = typeId.split('_')[0];
-    var id = typeId.split('_')[1];
-    if (type === 'now') {
-      pageData = data.nowData;
-    } else if (type === 'week') {
-      pageData = data.weekData;
-    } else if (type === 'month') {
-      pageData = data.monthData;
-    }
+  var typeId = window.location.href.split('?')[1];
+  var type = typeId.split('_')[0];
+  var id = typeId.split('_')[1];
 
+  if (type === 'now') {
+    $.get( '/getNowData', function(data) {
+        var pageData = data.data;
+
+        drawChart(pageData);
+    });
+
+  } else if (type === 'week') {
+    $.get( '/getWeekData', function(data) {
+        var pageData = data.data;
+
+        drawChart(pageData);
+    });
+  } else if (type === 'month') {
+    $.get( '/getMonthData', function(data) {
+        var pageData = data.data;
+
+        drawChart(pageData);
+    });
+  }
+
+  if (type === 'now') {
+    getArticles();
+  } else {
+    document.getElementById('newscard').remove();
+    document.getElementById('articles').remove();
+  }
+});
+
+
+var drawChart = function (pageData, id) {
     google.charts.load('current', {'packages':['line']});
     google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-        // create data chart
-        var data = new google.visualization.DataTable();
-        // add columns
-        data.addColumn('string', 'Pageviews');
+    // create data chart
+    var data = new google.visualization.DataTable();
+    // add columns
+    data.addColumn('string', 'Pageviews');
 
         // add pagename and descriptions
         var pagename = pageData[id].split('\t')[0];
@@ -58,15 +78,7 @@ $.get( '/getData', function(data) {
 
         var chart = new google.charts.Line(document.getElementById('chart_div'));
         chart.draw(data, options);
-
-        if (type === 'now') {
-          getArticles();
-        } else {
-          document.getElementById('newscard').remove();
-          document.getElementById('articles').remove();
-        }
     }
-});
 
 
 var getArticles = function () {

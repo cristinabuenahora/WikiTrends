@@ -26,21 +26,23 @@
       <% } %>
     </div>
     <div class="card">
-      <a href="/" class="navbutton" id="all">All</a>
-      <a href="/" class="navbutton">Category</a>
-      <a href="/" class="navbutton">Category</a>
-      <a href="/" class="navbutton">Category</a>
-      <a href="/" class="navbutton">Category</a>
-      <a href="/" class="navbutton">Category</a>
+      <a href="/<%=type%>" class="navbutton" id="all">All</a>
+      <a href="/<%=type%>?politics" class="navbutton" id="politics">Politics</a>
+      <a href="/<%=type%>?history" class="navbutton" id="history">History</a>
+      <a href="/<%=type%>?techScience" class="navbutton" id="techScience">Tech and Science</a>
+      <a href="/<%=type%>?entertainment" class="navbutton" id="entertainment">Entertainment</a>
+      <a href="/<%=type%>?sports" class="navbutton" id="sports">Sports</a>
     </div>
+    <br>
     <div class="row">
       <ul>
         <% for (var i = 1; i < numberOfPages - 1; i++) { %>
           <div id="wikicard<%=i%>" class="card">
             <!--<img src="/images/placeholder.png" class="cardimg"></img>-->
             <a href="/wikipage?<%=type%>_<%=i%>" id="wikipage<%=i%>" class="cardtext">
-              <div id="title<%=i%>" class="cardtext"><%= wikiPageNames[i] %></div>
-              <br><div class=\"text\"><%=descriptions[i]%></div>
+              <div id="title<%=i%>" class="cardtext"><%= wikiPageNames[i]%></div>
+              <div class="category"><%= categories[i]%></div>
+              <br><div class="text"><%=descriptions[i]%></div>
             </a>
             <!-- <br><div class="mainarticlescard" id="articles<%=i%>"></div> -->
           </div>

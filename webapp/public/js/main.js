@@ -1,11 +1,25 @@
 $(document).ready(function () {
-  getImages();
-  //getCategory();
-  //getArticles();
+  var category = window.location.href.split('?')[1];
+  console.log(category);
+  if (category === undefined) {
+    document.getElementById('all').style.textDecoration = "underline";
+  } else if (category === 'politics') {
+    document.getElementById('politics').style.textDecoration = "underline";
+  } else if (category === 'history') {
+    document.getElementById('history').style.textDecoration = "underline";
+  } else if (category === 'techScience') {
+    document.getElementById('techScience').style.textDecoration = "underline";
+  } else if (category === 'entertainment') {
+    document.getElementById('entertainment').style.textDecoration = "underline";
+  } else if (category === 'sports') {
+    document.getElementById('sports').style.textDecoration = "underline";
+  }
+
+  getImages(category);
 });
 
 
-var getImages = function () {
+var getImages = function (category) {
 
   var type = window.location.href.split("/")[3];
   if (type == undefined) type = 'now';

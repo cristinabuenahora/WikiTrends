@@ -18,7 +18,7 @@ def main():
 
     #list = ['arts', 'culture', 'entertainment', 'game', 'geography', 'health', 'history', 'humanities', 'industry', 'law', 'life', 'math', 'matter', 'nature', 'philsophy', 'people', 'politic', 'reference work', 'religion', 'science', 'technology', 'society']
     list = [politics, history, techScience, sports, entertainment]
-    listName = ['politics', 'history', 'techScience', 'sports', 'entertainment']
+    listName = ['Politics', 'History', 'Tech & Science', 'Sports', 'Entertainment']
     #print list
 
     out.write(f.readline());
