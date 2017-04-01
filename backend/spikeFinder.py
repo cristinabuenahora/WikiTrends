@@ -25,9 +25,11 @@ def main():
     t = line.split('\t')
     if (len(t) > 1):
       d[t[0]] = t[1].split('\n')[0]
+  max_f1=0
   for line in f1:
     t = line.split('\t')
     if (len(t) > 1):
+      max_f1 = len(t[1].split())
       if t[0] in d:
         d[t[0]] += t[1]
       else:
@@ -35,11 +37,12 @@ def main():
   
   for line in d:
     l = len(d[line].split())
-    if l < 14:
+    if l < 7 + max_f1:
       d[line] = d[line].split('\n')[0]
-      for i in range(0,14-l):
-        d[line] += " 0"
+      for i in range(0,max_f1-l):
+        d[line] += "0 "
       d[line] += "\n"
+
  
   for page in d:
     counts = d[page].split()
