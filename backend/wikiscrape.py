@@ -14,19 +14,19 @@ def main():
         # get pagename and page
         pagename = line.split('\t')[0]
         pagename = pagename.replace('_', ' ')
-        print pagename
+        #print pagename
         page = wikipedia.page(pagename)
 
         # get summary
         summary = wikipedia.summary(pagename, sentences=2)
-        newline = line.split('\n')[0] + '\t' + summary
+        newline = line.split('\n')[0] + '\t' + ' '.join(summary.split('\n'))
         out1.write(newline.encode('utf8') + '\n')
 
         # get categories
-        pagename = pagename.replace(' ', '_')
-        categories = page.categories
-        newline = pagename + '\t' + ','.join(categories)
-        out2.write(newline.encode('utf8') + '\n')
+        # pagename = pagename.replace(' ', '_')
+        # categories = page.categories
+        # newline = pagename + '\t' + ','.join(categories)
+        # out2.write(newline.encode('utf8') + '\n')
 
 
 if __name__ == '__main__':
