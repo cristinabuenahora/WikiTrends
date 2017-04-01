@@ -79,6 +79,15 @@
   background-color: #4ECDC4;
 }
 
+.line {
+  height: 1px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 10px;
+  background-color: #4a5561;
+}
+
 .trendingimg {
   margin: 0px 100px;
   padding-left: 50px;
@@ -264,10 +273,10 @@ a:hover {
 }
 
 .wikipagebar {
-  height: 3px;
-  width: 80%;
+  height: 2px;
+  width: 70%;
   background-color: #4ECDC4;
-  margin: 30px 100px;
+  margin: 30px 140px;
   padding: 0px 50px;
 }
 
@@ -463,9 +472,29 @@ table {
   padding: 10px;
 }
 
+.articlestxt {
+  margin: 0px 100px;
+  padding: 10px 50px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 30px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  box-sizing: border-box;
+  word-wrap: normal;
+  height: auto;
+  display: flex;
+  align-self: center;
+  align-content: center;
+  background-color: #343c44;
+}
+
 .articlescard {
-  margin: 20px 100px;
-  padding: 0 50px;
+  margin: 0px 100px;
+  padding: 20px 50px;
   font-size: 14px;
   font-weight: normal;
   line-height: 30px;
@@ -478,7 +507,22 @@ table {
   height: 400px;
   width: auto;
   overflow: auto;
-  /*background-color: #687787;*/
+  background-color: #343c44;
+}
+
+.articlescard {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 30px;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-sizing: border-box;
+  word-wrap: normal;
+  height: 400px;
+  width: auto;
+  overflow: auto;
 }
 
 .articlecard {
@@ -502,8 +546,8 @@ table {
 }
 
 .articleimg {
-  width: auto;
-  height: auto;
+  width: 140px;
+  height: 125px;
   padding: 5px;
   display: block;
   margin: 0 20px;

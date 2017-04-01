@@ -1,7 +1,7 @@
 //console.log('in chart.js');
 
 $.get( '/getData', function(data) {
-    var pageData = undefined;
+    var pageData = data.nowData;
     //var month = data.month;
     var typeId = window.location.href.split('?')[1];
     var type = typeId.split('_')[0];
@@ -110,21 +110,6 @@ var getDescription = function () {
 
 var getArticles = function () {
 
-  // const client = webhoseio.config({token: '3f07ddf5-10b1-40b8-95d5-78492557f2c8'});
-  // client.query('filterWebData', {q: 'github'})
-  //   .then(output => {
-  //     console.log(output['posts'][0]['text']); // Print the text of the first post
-  //     console.log(output['posts'][0]['published']); // Print the text of the first post publication date
-  // });
-  //
-  // // Get the next batch of posts
-  // client.getNext()
-  //   .then(output => {
-  //     console.log(output['posts'][0]['thread']['site']); // Print the site of the first post
-  //   });
-  //
-  // console.log("------------------------");
-
   var newsSources = "npr pbs bbc cnn nbc abc fox hannity limbaugh glenn beck";
 
   var pagename = $('#pagename').text();
@@ -148,6 +133,7 @@ var getArticles = function () {
         //if (newsSources.includes(source.toLowerCase())) {
           var name = data.value[i].name;
           var url = data.value[i].url;
+          var desc = data.value[i].description;
           var image = data.value[i].image;
           var articleDiv = "<div class=\"articlecard\">";
           if (image) {
@@ -155,10 +141,10 @@ var getArticles = function () {
              imageDiv = "<img class=\"articleimg\" src="+ imageUrl + ">";
              articleDiv += imageDiv;
           }
-          var articleStr = "<div class=\"text\"><i>" + source + "</i></div>" + "<div class=\"text\">" + name + "</div>";
+          var articleStr = "<div class=\"text\"><div class=\"text\" style=\"text-transform: uppercase\">" + source + "</div><br>" + "<div class=\"text\" style=\"font-size: 22px\">" + name + "</div></div>";
           articleDiv += "<a class=\"innercard\" href=" + url + " target=\"_blank\">" + articleStr + "</a></div>";
           articleDiv += "</div>"
-          innerHTML += articleDiv + "";
+          innerHTML += articleDiv + "<div class=\"line\"/>";
         //}
       }
       articles.html(innerHTML);
