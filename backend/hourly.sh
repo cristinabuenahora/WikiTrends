@@ -112,6 +112,6 @@ echo "getting categories"
 python category.py $wikifile $datafile
 
 
-cp $wikifile $frontendfile
+cp $datafile $frontendfile
 
 echo "finished"
