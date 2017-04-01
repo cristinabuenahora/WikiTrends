@@ -20,15 +20,16 @@ $.get( '/getData', function(data) {
     function drawChart() {
         // create data chart
         var data = new google.visualization.DataTable();
-
         // add columns
         data.addColumn('string', 'Pageviews');
 
-        // add pagename
+        // add pagename and descriptions
         var pagename = pageData[id].split('\t')[0];
         document.getElementById('pagename').href += "https://en.wikipedia.org/wiki/" + pagename;
         pagename = pagename.split('_').join(' ');
         document.getElementById('pagename').innerHTML += pagename;
+        var desc = pageData[id].split('\t')[2];
+        document.getElementById('description').innerHTML += desc;
 
         data.addColumn('number', pagename);
         var dates = pageData[0].split(' ');
@@ -58,7 +59,6 @@ $.get( '/getData', function(data) {
         var chart = new google.charts.Line(document.getElementById('chart_div'));
         chart.draw(data, options);
 
-        getDescription();
         if (type === 'now') {
           getArticles();
         } else {
@@ -68,55 +68,10 @@ $.get( '/getData', function(data) {
     }
 });
 
-var getDescription = function () {
-  var pagename = $('#pagename').text();
-  console.log(pagename);
-  var url = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=' + pagename + '&callback=?';
-
-  $.ajax({
-      type: "GET",
-      url: url,
-      contentType: "application/json; charset=utf-8",
-      async: false,
-      dataType: "json",
-      success: function (data, textStatus, jqXHR) {
-
-          var title = data.parse.title;
-          var markup = data.parse.text["*"];
-          var blurb = $('<div></div>').html(markup);
-
-          // remove links as they will not work
-          blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
-          // remove any references
-          blurb.find('sup').remove();
-          // remove cite error
-          blurb.find('.mw-ext-cite-error').remove();
-
-          desc = blurb[0].innerHTML.split('<p>');
-          if (desc.length == 1) {
-            desc = blurb[0].innerHTML.split('<p align="justify">');
-          }
-          desc = desc[1].split('</p>')[0];
-
-          console.log(desc);
-
-          // add description to html
-          document.getElementById('description').innerHTML += desc;
-      },
-      error: function (errorMessage) {
-      }
-  });
-}
 
 var getArticles = function () {
-
-  var newsSources = "npr pbs bbc cnn nbc abc fox hannity limbaugh glenn beck";
-
   var pagename = $('#pagename').text();
-  console.log(pagename);
-
   var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=30&offset=0&mkt=en-us&safeSearch=Moderate&freshness=day";
-  console.log("url: " + url);
 
   $.ajax({
   	type: 'GET',
@@ -145,7 +100,6 @@ var getArticles = function () {
           articleDiv += "<a class=\"innercard\" href=" + url + " target=\"_blank\">" + articleStr + "</a></div>";
           articleDiv += "</div>"
           innerHTML += articleDiv + "<div class=\"line\"/>";
-        //}
       }
       articles.html(innerHTML);
   	}

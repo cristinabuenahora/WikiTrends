@@ -32,8 +32,9 @@
             <!--<img src="/images/placeholder.png" class="cardimg"></img>-->
             <a href="/wikipage?<%=type%>_<%=i%>" id="wikipage<%=i%>" class="cardtext">
               <div id="title<%=i%>" class="cardtext"><%= wikiPageNames[i] %></div>
+              <br><div class=\"text\"><%=descriptions[i]%></div>
             </a>
-            <br><div class="mainarticlescard" id="articles<%=i%>"></div>    
+            <!-- <br><div class="mainarticlescard" id="articles<%=i%>"></div> -->
           </div>
         <% } %>
       </ul>

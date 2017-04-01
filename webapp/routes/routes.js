@@ -7,10 +7,13 @@ module.exports = function(app) {
 	app.get('/', function(req, res) {
 			var data = fs.readFileSync('data/now.txt').toString('utf8').split('\n');
 			var pageNames = [];
+			var descriptions = [];
 			for (var i = 0; i < data.length; i++) {
 				var pageName = data[i].split('\t')[0];
 				pageName = pageName.split('_').join(' ');
 				pageNames.push(pageName);
+				var desc = data[i].split('\t')[2];
+				descriptions.push(desc);
 			}
 			var numPages = pageNames.length;
 
@@ -18,6 +21,7 @@ module.exports = function(app) {
 					type: "now",
 					wikiPageNames: pageNames,
 					numberOfPages: numPages,
+					descriptions: descriptions,
 			});
 	});
 
