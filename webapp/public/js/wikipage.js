@@ -1,77 +1,92 @@
-//console.log('in chart.js');
+$(document).ready(function () {
 
-$.get( '/getData', function(data) {
-    var pageData = data.nowData;
-    //var month = data.month;
-    var typeId = window.location.href.split('?')[1];
-    var type = typeId.split('_')[0];
-    var id = typeId.split('_')[1];
-    if (type === 'now') {
-      pageData = data.nowData;
-    } else if (type === 'week') {
-      pageData = data.weekData;
-    } else if (type === 'month') {
-      pageData = data.monthData;
-    }
+  var typeId = window.location.href.split('?')[1];
+  var type = typeId.split('_')[0];
+  var id = typeId.split('_')[1];
 
+  if (type === 'now') {
+    $.get( '/getNowData', function(data) {
+        var pageData = data.data;
+
+        chart(pageData, type, id);
+    });
+
+  } else if (type === 'week') {
+    $.get( '/getWeekData', function(data) {
+        var pageData = data.data;
+
+        chart(pageData, type, id);
+    });
+  } else if (type === 'month') {
+    $.get( '/getMonthData', function(data) {
+        var pageData = data.data;
+
+        chart(pageData, type, id);
+    });
+  }
+});
+
+
+var chart = function (pageData, type, id) {
     google.charts.load('current', {'packages':['line']});
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-        // create data chart
-        var data = new google.visualization.DataTable();
-        // add columns
-        data.addColumn('string', 'Pageviews');
+      // create data chart
+      var data = new google.visualization.DataTable();
+      // add columns
+      data.addColumn('string', 'Pageviews');
 
-        // add pagename and descriptions
-        var pagename = pageData[id].split('\t')[0];
-        document.getElementById('pagename').href += "https://en.wikipedia.org/wiki/" + pagename;
-        pagename = pagename.split('_').join(' ');
-        document.getElementById('pagename').innerHTML += pagename;
-        var desc = pageData[id].split('\t')[2];
-        document.getElementById('description').innerHTML += desc;
+          // add pagename and descriptions
+          var pagename = pageData[id].split('\t')[0];
+          document.getElementById('pagename').href += "https://en.wikipedia.org/wiki/" + pagename;
+          pagename = pagename.split('_').join(' ');
+          document.getElementById('pagename').innerHTML += pagename;
+          var desc = pageData[id].split('\t')[2];
+          document.getElementById('description').innerHTML += desc;
 
-        data.addColumn('number', pagename);
-        var dates = pageData[0].split(' ');
-        var pageCounts = pageData[id].split('\t')[1].split(' ');
+          data.addColumn('number', pagename);
+          var dates = pageData[0].split(' ');
+          var pageCounts = pageData[id].split('\t')[1].split(' ');
 
-        rows = [];
-        for (var i = 0; i < pageCounts.length; i++) {
-            var row = [];
-            row.push(dates[i]);
-            row.push(parseInt(pageCounts[i]));
-            rows.push(row);
-        }
-        data.addRows(rows);
+          rows = [];
+          for (var i = 0; i < pageCounts.length; i++) {
+              var row = [];
+              row.push(dates[i]);
+              row.push(parseInt(pageCounts[i]));
+              rows.push(row);
+          }
+          data.addRows(rows);
 
-        var options = {
-            legend: {
-                position: 'none'
-            },
-            tooltip: {isHtml: true},
-            backgroundColor: {
-                fill: '#292f36',
-                opacity: 100
-             },
-            colors: ['#4ecdc4']
-        };
+          var options = {
+              legend: {
+                  position: 'none'
+              },
+              tooltip: {isHtml: true},
+              backgroundColor: {
+                  fill: '#292f36',
+                  opacity: 100
+               },
+              colors: ['#4ecdc4']
+          };
 
-        var chart = new google.charts.Line(document.getElementById('chart_div'));
-        chart.draw(data, options);
+          var chart = new google.charts.Line(document.getElementById('chart_div'));
+          chart.draw(data, options);
 
-        if (type === 'now') {
+
+          //if (type === 'now') {
           getArticles();
-        } else {
-          document.getElementById('newscard').remove();
-          document.getElementById('articles').remove();
-        }
+          //} else {
+            //document.getElementById('newscard').remove();
+            //document.getElementById('articles').remove();
+          //}
     }
-});
+  }
 
 
 var getArticles = function () {
   var pagename = $('#pagename').text();
-  var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=30&offset=0&mkt=en-us&safeSearch=Moderate&freshness=day";
+  var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=30&mkt=en-us&safeSearch=Moderate";
 
   $.ajax({
   	type: 'GET',

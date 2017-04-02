@@ -14,14 +14,13 @@ def main():
     for line in f.readlines()[1:]:
         # get pagename and page
         pagename = line.split('\t')[0]
-        #pagename = pagename.replace('_', ' ')
         page = wikipedia.page(pagename)
 
         # get summary
         summary = wikipedia.summary(pagename, sentences=2)
+        summary = summary.split("==")[0]
 
         # get categories
-        pagename = pagename.replace(' ', '_')
         categories = page.categories
         newline = line.split('\n')[0] + '\t' + ' '.join(summary.split('\n')) + '\t' + ','.join(categories)
         out.write(newline.encode('utf8') + '\n')
