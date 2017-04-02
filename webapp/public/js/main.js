@@ -1,7 +1,9 @@
 $(document).ready(function () {
-  var type = window.location.href.split('/')[3];
+  var type = window.location.href.split('/')[3].split('?')[0];
+  console.log(type);
   var category = window.location.href.split('?')[1];
-  if (type == undefined || type == 'now') {
+  console.log(category);
+  if (type == undefined || type == '' || type == 'now') {
     if (category === undefined) {
       document.getElementById('all').style.backgroundColor = "#4ECDC4";
     } else if (category === 'politics') {
