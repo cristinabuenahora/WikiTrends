@@ -25,23 +25,23 @@
         <img src="images/trendingmonth.png" class="trendingimg"></img>
       <% } %>
     </div>
-    <div class="card">
-      <a href="/<%=type%>" class="navbutton" id="all">All</a>
-      <a href="/<%=type%>?politics" class="navbutton" id="politics">Politics</a>
-      <a href="/<%=type%>?history" class="navbutton" id="history">History</a>
-      <a href="/<%=type%>?techScience" class="navbutton" id="techScience">Tech and Science</a>
-      <a href="/<%=type%>?entertainment" class="navbutton" id="entertainment">Entertainment</a>
-      <a href="/<%=type%>?sports" class="navbutton" id="sports">Sports</a>
+    <div class="categoryOptions">
+      <a href="/<%=type%>" class="catbutton" id="all">All</a>
+      <a href="/<%=type%>?politics" class="catbutton" id="politics">Politics</a>
+      <a href="/<%=type%>?history" class="catbutton" id="history">History</a>
+      <a href="/<%=type%>?techScience" class="catbutton" id="techScience">Tech and Science</a>
+      <a href="/<%=type%>?entertainment" class="catbutton" id="entertainment">Entertainment</a>
+      <a href="/<%=type%>?sports" class="catbutton" id="sports">Sports</a>
     </div>
     <br>
-    <div class="row">
+    <div class="row" id="trending">
       <ul>
         <% for (var i = 1; i < numberOfPages - 1; i++) { %>
-          <div id="wikicard<%=i%>" class="card">
+          <div class="card" id="wikicard<%=i%>">
             <!--<img src="/images/placeholder.png" class="cardimg"></img>-->
             <a href="/wikipage?<%=type%>_<%=i%>" id="wikipage<%=i%>" class="cardtext">
-              <div id="title<%=i%>" class="cardtext"><%= wikiPageNames[i]%></div>
-              <div class="category"><%= categories[i]%></div>
+              <div class="category" id="category<%=i%>"><%= categories[i]%></div>
+              <div class="cardtext" id="title<%=i%>"><%= wikiPageNames[i]%></div>
               <br><div class="text"><%=descriptions[i]%></div>
             </a>
             <!-- <br><div class="mainarticlescard" id="articles<%=i%>"></div> -->
