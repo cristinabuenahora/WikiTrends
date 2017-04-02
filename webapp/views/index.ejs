@@ -18,13 +18,18 @@
     </header>
     <div class="bar">
       <%if (type === "now") { %>
+        <div class="bar">
         <img src="images/trendingnowon.png" class="trendingimg"></img>
+        </div>
       <% } else if (type === "week") { %>
-        <img src="images/trendingweek.png" class="trendingimg"></img>
+        <div class="weekbar">
+        <img src="images/week.png" class="trendingimg"></img>
+        </div>
       <% } else if (type === "month") { %>
-        <img src="images/trendingmonth.png" class="trendingimg"></img>
+        <div class="monthbar">
+        <img src="images/month.png" class="trendingimg"></img>
+        </div>
       <% } %>
-    </div>
     <div class="categoryOptions">
       <a href="/<%=type%>" class="catbutton" id="all">All</a>
       <a href="/<%=type%>?politics" class="catbutton" id="politics">Politics</a>

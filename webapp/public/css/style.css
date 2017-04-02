@@ -77,6 +77,26 @@
   background-color: #4ECDC4;
 }
 
+.weekbar {
+  height: 100px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  background-color: #FF6B6B;
+}
+
+.monthbar {
+  height: 100px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  background-color: #FFDB58;
+}
+
 .line {
   height: 1px;
   width: 100%;
@@ -131,7 +151,7 @@ a:hover {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  margin: 0 3px; 
+  margin: 0 3px;
   color: white;
   text-align: center;
   font-size: 16px;
@@ -200,7 +220,7 @@ a:hover {
 
 .option {
   width: 100%;
-  background-color: #292f36;
+  background-color: #55626f;
 }
 
 .categoryOptions {

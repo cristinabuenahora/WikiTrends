@@ -74,12 +74,12 @@ var chart = function (pageData, type, id) {
           chart.draw(data, options);
 
 
-          if (type === 'now') {
-            getArticles();
-          } else {
-            document.getElementById('newscard').remove();
-            document.getElementById('articles').remove();
-          }
+          //if (type === 'now') {
+          getArticles();
+          //} else {
+            //document.getElementById('newscard').remove();
+            //document.getElementById('articles').remove();
+          //}
     }
   }
 

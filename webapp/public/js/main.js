@@ -1,18 +1,48 @@
 $(document).ready(function () {
+  var type = window.location.href.split('/')[3];
   var category = window.location.href.split('?')[1];
-  console.log(category);
-  if (category === undefined) {
-    document.getElementById('all').style.backgroundColor = "#4ECDC4";
-  } else if (category === 'politics') {
-    document.getElementById('politics').style.backgroundColor = "#4ECDC4";
-  } else if (category === 'history') {
-    document.getElementById('history').style.backgroundColor = "#4ECDC4";
-  } else if (category === 'techScience') {
-    document.getElementById('techScience').style.backgroundColor = "#4ECDC4";
-  } else if (category === 'entertainment') {
-    document.getElementById('entertainment').style.backgroundColor = "#4ECDC4";
-  } else if (category === 'sports') {
-    document.getElementById('sports').style.backgroundColor = "#4ECDC4";
+  if (type == undefined || type == 'now') {
+    if (category === undefined) {
+      document.getElementById('all').style.backgroundColor = "#4ECDC4";
+    } else if (category === 'politics') {
+      document.getElementById('politics').style.backgroundColor = "#4ECDC4";
+    } else if (category === 'history') {
+      document.getElementById('history').style.backgroundColor = "#4ECDC4";
+    } else if (category === 'techScience') {
+      document.getElementById('techScience').style.backgroundColor = "#4ECDC4";
+    } else if (category === 'entertainment') {
+      document.getElementById('entertainment').style.backgroundColor = "#4ECDC4";
+    } else if (category === 'sports') {
+      document.getElementById('sports').style.backgroundColor = "#4ECDC4";
+    }
+  } else if (type == 'week') {
+    if (category === undefined) {
+      document.getElementById('all').style.backgroundColor = "#FF6B6B";
+    } else if (category === 'politics') {
+      document.getElementById('politics').style.backgroundColor = "#FF6B6B";
+    } else if (category === 'history') {
+      document.getElementById('history').style.backgroundColor = "#FF6B6B";
+    } else if (category === 'techScience') {
+      document.getElementById('techScience').style.backgroundColor = "#FF6B6B";
+    } else if (category === 'entertainment') {
+      document.getElementById('entertainment').style.backgroundColor = "#FF6B6B";
+    } else if (category === 'sports') {
+      document.getElementById('sports').style.backgroundColor = "#FF6B6B";
+    }
+  } else if (type == 'month') {
+    if (category === undefined) {
+      document.getElementById('all').style.backgroundColor = "#FFDB58";
+    } else if (category === 'politics') {
+      document.getElementById('politics').style.backgroundColor = "#FFDB58";
+    } else if (category === 'history') {
+      document.getElementById('history').style.backgroundColor = "#FFDB58";
+    } else if (category === 'techScience') {
+      document.getElementById('techScience').style.backgroundColor = "#FFDB58";
+    } else if (category === 'entertainment') {
+      document.getElementById('entertainment').style.backgroundColor = "#FFDB58";
+    } else if (category === 'sports') {
+      document.getElementById('sports').style.backgroundColor = "#FFDB58";
+    }
   }
 
   getImages(category);
@@ -84,7 +114,13 @@ var getImages = function (category) {
                   if (img != undefined) {
                     newHTML = "<div class=\"imgwrap\"><div class=\"imgtext\">" + i + "</div><img class=\"cardimg\" src=\"" + img + "\"></div>" + "<div class=\"innercard\">" + $("#wikicard" + i).html() + "<a href=\"/wikipage?" + type + "_" + i + "\" class=\"seemore\" style=\"text-decoration: underline\">See more</a>";
                   } else {
-                    newHTML = "<div class=\"imgwrap\"><div class=\"imgtext\">" + i + "</div><img class=\"cardimg\" src=\"images/arrow.png\"></div>" + "<div class=\"innercard\">" + $("#wikicard" + i).html() + "<a href=\"/wikipage?" + type + "_" + i + "\" class=\"seemore\" style=\"text-decoration: underline\">See more</a>";
+                    if (type == undefined || type == 'now') {
+                      newHTML = "<div class=\"imgwrap\"><div class=\"imgtext\">" + i + "</div><img class=\"cardimg\" src=\"images/arrow.png\"></div>" + "<div class=\"innercard\">" + $("#wikicard" + i).html() + "<a href=\"/wikipage?" + type + "_" + i + "\" class=\"seemore\" style=\"text-decoration: underline\">See more</a>";
+                    } else if (type == 'week') {
+                      newHTML = "<div class=\"imgwrap\"><div class=\"imgtext\">" + i + "</div><img class=\"cardimg\" src=\"images/weekarrow.png\"></div>" + "<div class=\"innercard\">" + $("#wikicard" + i).html() + "<a href=\"/wikipage?" + type + "_" + i + "\" class=\"seemore\" style=\"text-decoration: underline\">See more</a>";
+                    } else if (type == 'month') {
+                      newHTML = "<div class=\"imgwrap\"><div class=\"imgtext\">" + i + "</div><img class=\"cardimg\" src=\"images/montharrow.png\"></div>" + "<div class=\"innercard\">" + $("#wikicard" + i).html() + "<a href=\"/wikipage?" + type + "_" + i + "\" class=\"seemore\" style=\"text-decoration: underline\">See more</a>";
+                    }
                   }
                   $("#wikicard" + i).html(newHTML);
                 }
