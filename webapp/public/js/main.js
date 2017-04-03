@@ -1,8 +1,6 @@
 $(document).ready(function () {
   var type = window.location.href.split('/')[3].split('?')[0];
-  console.log(type);
   var category = window.location.href.split('?')[1];
-  console.log(category);
   if (type == undefined || type == '' || type == 'now') {
     if (category === undefined) {
       document.getElementById('all').style.backgroundColor = "#4ECDC4";
@@ -57,10 +55,13 @@ var getImages = function (category) {
   if (type == undefined) type = 'now';
 
   var categoryContains = false;
+  console.log('category is ' + category);
 
   for (var i = 1; i < numberOfPages - 1; i++) {
 
     var pageCategory = $("#category" + i).html().toLowerCase();
+    if (pageCategory.includes("tech")) pageCategory = "techScience";
+    console.log('category is ' + pageCategory);
 
     if (category == undefined || pageCategory == category) {
 
@@ -96,7 +97,7 @@ var getImages = function (category) {
               img = blurb[0].innerHTML.split('src=\"');
               if (img.length != 1) {
                 img = "https:" + img[1].split(' ')[0];
-                if (img.includes('23px') || img.includes('Ambox_important') || img.includes('Ambox_current') || img.includes('Wiki_letter_w.svg') || img.includes('Question_book-new.svg') || img.includes('Edit-clear') || img.includes('Commons-logo.svg')) {
+                if (img.includes('23px') || img.includes('Ambox') || img.includes('Wiki_letter_w.svg') || img.includes('Question_book-new.svg') || img.includes('Edit-clear') || img.includes('Commons-logo.svg')) {
                   img = undefined;
                   imgArr = blurb[0].innerHTML.split('src="');
                   for (var i = 0; i < imgArr.length; i++) {
