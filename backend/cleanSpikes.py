@@ -26,7 +26,7 @@ for line in f:
     if not delete:
       spikes[title] = count
       numSpikes += 1 
-    if numSpikes > 40:
+    if numSpikes > 70:
       break
   except:
     x = 1
