@@ -117,5 +117,26 @@ cp $datafile $frontendfile
 
 echo "finished"
 
-sleep 3600 
+sleep 600
+
+echo "ten minutes waited"
+
+sleep 600
+
+echo "twenty mins"
+
+sleep 600
+
+echo "thirty mins"
+
+sleep 600
+
+echo "forty mins"
+
+sleep 600
+
+echo "fifty mins"
+
+sleep 600
+ 
 done

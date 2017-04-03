@@ -22,6 +22,7 @@ def main():
 
         # get categories
         categories = page.categories
+	print categories
         newline = line.split('\n')[0] + '\t' + ' '.join(summary.split('\n')) + '\t' + ','.join(categories)
         out.write(newline.encode('utf8') + '\n')
 
