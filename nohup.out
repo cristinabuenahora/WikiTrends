@@ -1,0 +1,10 @@
+module.js:328
+    throw err;
+    ^
+
+Error: Cannot find module '/home/ubuntu/WikiTrends/app'
+    at Function.Module._resolveFilename (module.js:326:15)
+    at Function.Module._load (module.js:277:25)
+    at Function.Module.runMain (module.js:442:10)
+    at startup (node.js:136:18)
+    at node.js:966:3

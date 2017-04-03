@@ -1,3 +1,85 @@
 Sun, 26 Feb 2017 23:28:40 GMT express-session deprecated undefined resave option; provide resave option at app.js:22:9
 Sun, 26 Feb 2017 23:28:40 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:22:9
 App listening on port 8000
+Sat, 01 Apr 2017 03:47:50 GMT express-session deprecated undefined resave option; provide resave option at app.js:22:9
+Sat, 01 Apr 2017 03:47:50 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:22:9
+App listening on port 8000
+ReferenceError: /home/ubuntu/WikiTrends/webapp/views/index.ejs:43
+    41|             <a href="/wikipage?<%=type%>_<%=i%>" id="wikipage<%=i%>" class="cardtext">
+    42|               <div id="title<%=i%>" class="cardtext"><%= wikiPageNames[i] %></div>
+ >> 43|               <br><div class=\"text\"><%=descriptions[i]%></div>
+    44|             </a>
+    45|             <!-- <br><div class="mainarticlescard" id="articles<%=i%>"></div> -->
+    46|           </div>
+
+descriptions is not defined
+    at eval (eval at <anonymous> (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:524:12), <anonymous>:70:25)
+    at returnedFn (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:555:17)
+    at tryHandleCache (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:203:34)
+    at View.exports.renderFile [as engine] (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:412:10)
+    at View.render (/home/ubuntu/WikiTrends/node_modules/express/lib/view.js:76:8)
+    at Function.app.render (/home/ubuntu/WikiTrends/node_modules/express/lib/application.js:513:10)
+    at ServerResponse.res.render (/home/ubuntu/WikiTrends/node_modules/express/lib/response.js:830:7)
+    at /home/ubuntu/WikiTrends/webapp/routes/routes.js:17:8
+    at Layer.handle [as handle_request] (/home/ubuntu/WikiTrends/node_modules/express/lib/router/layer.js:76:5)
+    at next (/home/ubuntu/WikiTrends/node_modules/express/lib/router/route.js:100:13)
+ReferenceError: /home/ubuntu/WikiTrends/webapp/views/index.ejs:43
+    41|             <a href="/wikipage?<%=type%>_<%=i%>" id="wikipage<%=i%>" class="cardtext">
+    42|               <div id="title<%=i%>" class="cardtext"><%= wikiPageNames[i] %></div>
+ >> 43|               <br><div class=\"text\"><%=descriptions[i]%></div>
+    44|             </a>
+    45|             <!-- <br><div class="mainarticlescard" id="articles<%=i%>"></div> -->
+    46|           </div>
+
+descriptions is not defined
+    at eval (eval at <anonymous> (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:524:12), <anonymous>:70:25)
+    at returnedFn (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:555:17)
+    at tryHandleCache (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:203:34)
+    at View.exports.renderFile [as engine] (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:412:10)
+    at View.render (/home/ubuntu/WikiTrends/node_modules/express/lib/view.js:76:8)
+    at Function.app.render (/home/ubuntu/WikiTrends/node_modules/express/lib/application.js:513:10)
+    at ServerResponse.res.render (/home/ubuntu/WikiTrends/node_modules/express/lib/response.js:830:7)
+    at /home/ubuntu/WikiTrends/webapp/routes/routes.js:17:8
+    at Layer.handle [as handle_request] (/home/ubuntu/WikiTrends/node_modules/express/lib/router/layer.js:76:5)
+    at next (/home/ubuntu/WikiTrends/node_modules/express/lib/router/route.js:100:13)
+ReferenceError: /home/ubuntu/WikiTrends/webapp/views/index.ejs:43
+    41|             <a href="/wikipage?<%=type%>_<%=i%>" id="wikipage<%=i%>" class="cardtext">
+    42|               <div id="title<%=i%>" class="cardtext"><%= wikiPageNames[i] %></div>
+ >> 43|               <br><div class=\"text\"><%=descriptions[i]%></div>
+    44|             </a>
+    45|             <!-- <br><div class="mainarticlescard" id="articles<%=i%>"></div> -->
+    46|           </div>
+
+descriptions is not defined
+    at eval (eval at <anonymous> (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:524:12), <anonymous>:70:25)
+    at returnedFn (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:555:17)
+    at tryHandleCache (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:203:34)
+    at View.exports.renderFile [as engine] (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:412:10)
+    at View.render (/home/ubuntu/WikiTrends/node_modules/express/lib/view.js:76:8)
+    at Function.app.render (/home/ubuntu/WikiTrends/node_modules/express/lib/application.js:513:10)
+    at ServerResponse.res.render (/home/ubuntu/WikiTrends/node_modules/express/lib/response.js:830:7)
+    at /home/ubuntu/WikiTrends/webapp/routes/routes.js:17:8
+    at Layer.handle [as handle_request] (/home/ubuntu/WikiTrends/node_modules/express/lib/router/layer.js:76:5)
+    at next (/home/ubuntu/WikiTrends/node_modules/express/lib/router/route.js:100:13)
+ReferenceError: /home/ubuntu/WikiTrends/webapp/views/index.ejs:43
+    41|             <a href="/wikipage?<%=type%>_<%=i%>" id="wikipage<%=i%>" class="cardtext">
+    42|               <div id="title<%=i%>" class="cardtext"><%= wikiPageNames[i] %></div>
+ >> 43|               <br><div class=\"text\"><%=descriptions[i]%></div>
+    44|             </a>
+    45|             <!-- <br><div class="mainarticlescard" id="articles<%=i%>"></div> -->
+    46|           </div>
+
+descriptions is not defined
+    at eval (eval at <anonymous> (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:524:12), <anonymous>:70:25)
+    at returnedFn (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:555:17)
+    at tryHandleCache (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:203:34)
+    at View.exports.renderFile [as engine] (/home/ubuntu/WikiTrends/node_modules/ejs/lib/ejs.js:412:10)
+    at View.render (/home/ubuntu/WikiTrends/node_modules/express/lib/view.js:76:8)
+    at Function.app.render (/home/ubuntu/WikiTrends/node_modules/express/lib/application.js:513:10)
+    at ServerResponse.res.render (/home/ubuntu/WikiTrends/node_modules/express/lib/response.js:830:7)
+    at /home/ubuntu/WikiTrends/webapp/routes/routes.js:17:8
+    at Layer.handle [as handle_request] (/home/ubuntu/WikiTrends/node_modules/express/lib/router/layer.js:76:5)
+    at next (/home/ubuntu/WikiTrends/node_modules/express/lib/router/route.js:100:13)
+Sat, 01 Apr 2017 21:49:22 GMT express-session deprecated undefined resave option; provide resave option at app.js:22:9
+Sat, 01 Apr 2017 21:49:22 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:22:9
+App listening on port 8000
