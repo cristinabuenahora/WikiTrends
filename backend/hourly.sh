@@ -1,7 +1,8 @@
 # Script that downloads the past hour of data, and redoes the analysis
 
+while true; do
 # find the hour, an hour ago, seems to be london based?
-hour=`date -d '4 hours ago' +%H`
+hour=`date -d '3 hours ago' +%H`
 day=`date +%d`
 month=`date +%m`
 monthb=$month
@@ -115,3 +116,6 @@ python category.py $wikifile $datafile
 cp $datafile $frontendfile
 
 echo "finished"
+
+sleep 3600 
+done
