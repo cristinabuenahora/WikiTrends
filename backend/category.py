@@ -29,15 +29,15 @@ def main():
         pagename = pagename.replace('_', ' ')
         categories = line.split('\t')[3].split(',')
         count = numpy.zeros(len(list))
-        print pagename
-        print categories
+ #       print pagename
+ #       print categories
 
         for c in categories:
             for i in range(0, len(count)):
                 for l in list[i]:
                     if l in c.lower():
                         count[i] = count[i] + 1
-                        print l
+ #                       print l
 
         max = 0
         main = []
@@ -50,12 +50,12 @@ def main():
                 max = count[i]
                 main.append(listName[i])
 
-        print '----------------------'
-        print main
+#        print '----------------------'
+#        print main
         newline = line.split('\t')[0] + '\t' + line.split('\t')[1] + '\t' + line.split('\t')[2] + '\t' + ','.join(main)
         out.write(newline.encode('utf8') + '\n')
-        print
-        print
+#        print
+#        print
 
 
 if __name__ == '__main__':
