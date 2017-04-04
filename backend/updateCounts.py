@@ -52,7 +52,6 @@ def main():
       countDict[pagename] += " " + hour_count
             
   # read back into countDict file
-  c = "hi"
   countDict_file.close()
   f = open(sys.argv[1], "w")
   for page in countDict:

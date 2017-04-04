@@ -14,29 +14,31 @@ def main():
   d = {}
   currHour = 0
   dayCount = {}
+  # iterate through the files in directory
   for filename in os.listdir(sys.argv[1]):
-    if currHour == 23:
+    if currHour != 23:
+      currHour += 1
+      f = open(sys.argv[1] + "/" + filename)
+      seen = {}
+      for line in f:
+        splits = line.split()
+        try:
+          title = splits[1].strip()
+          views = splits[2].strip()
+          if title not in dayCount:
+            dayCount[title] = 0
+          dayCount[title] += int(views)
+        except:
+          x=1
+    # if its the last hour of the day store this day and reset day count
+    else:
       for title in dayCount:
         if title not in d:
           d[title] = []
         d[title].append(dayCount[title])
       currHour = 0
       dayCount = {}
-    else: 
-      currHour += 1
-    f = open(sys.argv[1] + "/" + filename)
-    seen = {}
-    for line in f:
-      splits = line.split()
-      try:
-        title = splits[1].strip()
-        views = splits[2].strip()
-        if title not in dayCount:
-          dayCount[title] = 0
-        dayCount[title] += int(views)
-      except:
-        x=1
-
+  
   s = ''
   for title in d:
     keep = False
