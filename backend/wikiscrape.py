@@ -22,7 +22,11 @@ def main():
 
         # get categories
         categories = page.categories
-        newline = line.split('\t')[0] + '\t' + line.split('\t')[1] + '\t' + ' '.join(summary.split('\n')) + '\t' + ','.join(categories)
+	title = line.split('\t')[0]
+	counts = line.split('\t')[1].split('\n')[0]
+	summary = ' '.join(summary.split('\n'))
+	categories = ','.join(categories) 
+        newline = title + '\t' + counts + '\t' + summary + '\t' + categories
         out.write(newline.encode('utf8') + '\n')
 
 

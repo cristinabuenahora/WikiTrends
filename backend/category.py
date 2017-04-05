@@ -27,7 +27,11 @@ def main():
         # get pagename and page
         pagename = line.split('\t')[0]
         pagename = pagename.replace('_', ' ')
+	print line.split('\t')
+	if (len(line.split('\t')) < 4):
+	  continue
         categories = line.split('\t')[3].split(',')
+	print categories
         count = numpy.zeros(len(list))
 
         for c in categories:
