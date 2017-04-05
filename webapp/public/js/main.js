@@ -55,13 +55,11 @@ var getImages = function (category) {
   if (type == undefined) type = 'now';
 
   var categoryContains = false;
-  console.log('category is ' + category);
 
   for (var i = 1; i < numberOfPages - 1; i++) {
 
     var pageCategory = $("#category" + i).html().toLowerCase();
     if (pageCategory.includes("tech")) pageCategory = "techScience";
-    console.log('category is ' + pageCategory);
 
     if (category == undefined || pageCategory == category) {
 
@@ -159,7 +157,6 @@ var getArticles = function (title) {
       success: function (data, i) {
 
         var pagename = data.readLink.split("q=")[1].split("\"")[0].split("+").join(" ");
-        console.log(pagename);
 
         for (var i = 1; i < numberOfPages - 1; i++) {
           if ($("#title" + i).html() === (pagename)) {
