@@ -73,20 +73,16 @@ var chart = function (pageData, type, id) {
           var chart = new google.charts.Line(document.getElementById('chart_div'));
           chart.draw(data, options);
 
-
-          //if (type === 'now') {
           getArticles();
-          //} else {
-            //document.getElementById('newscard').remove();
-            //document.getElementById('articles').remove();
-          //}
     }
   }
 
 
 var getArticles = function () {
   var pagename = $('#pagename').text();
-  var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=30&mkt=en-us&safeSearch=Moderate";
+  var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=40&mkt=en-us&safeSearch=Moderate";
+
+  var fakeSources = ["occupydemocrats.com", "celebtricity.com", "empirenews.net", "firebrandleft.com", "huzlers.com", "thelastlineofdefense.org", "linkbeef.com", "kmt11.com", "nationalreport.net", "bloomberg.ma", "cnn-trending.com", "bizstandardnews.com", "drudgereport.com.co", "usatoday.com.co", "americannews.com", "washingtonpost.com.co", "addictinginfo.com", "rightwingnews.com", "abcnews.com.co", "theonion.com", "70news.wordpress.com", "eaglerising.com", "nationalreport.net", "infowars.com", "mediamass.net", "denverguardian.com", "reach365.com", "stuppid.com", "boston-tribune", "thenewsnerd.com", "conservative-frontline"];
 
   $.ajax({
   	type: 'GET',
@@ -96,13 +92,20 @@ var getArticles = function () {
     success: function (data) {
       var articles = $('#articles');
       var innerHTML = articles.html();
-      //console.log(data.value);
       for (var i = 0; i < data.value.length; i++) {
+        var url = data.value[i].url;
         var source = data.value[i].provider[0].name;
-        //console.log(source);
-        //if (newsSources.includes(source.toLowerCase())) {
+
+        var fakeNews = false;
+        for (var j = 0; j < fakeSources.length; j++) {
+          if (url.includes(fakeSources[j])) {
+            console.log(fakeSources[j]);
+            fakeNews = true;
+          }
+        }
+
+        if (!fakeNews && !source.includes(".com") && source.split(".").length < 3) {
           var name = data.value[i].name;
-          var url = data.value[i].url;
           var desc = data.value[i].description;
           var image = data.value[i].image;
           var articleDiv = "<div class=\"articlecard\">";
@@ -115,6 +118,9 @@ var getArticles = function () {
           articleDiv += "<a class=\"innercard\" href=" + url + " target=\"_blank\">" + articleStr + "</a></div>";
           articleDiv += "</div>"
           innerHTML += articleDiv + "<div class=\"line\"/>";
+        } else {
+          console.log("removing " + source + ": " + data.value[i].name);
+        }
       }
       articles.html(innerHTML);
   	}
