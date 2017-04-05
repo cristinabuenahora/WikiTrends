@@ -126,6 +126,7 @@ var getImages = function (category) {
                     }
                   }
                   $("#wikicard" + i).html(newHTML);
+                  //getArticles(title);
                 }
               }
           },
@@ -147,10 +148,8 @@ var getImages = function (category) {
 };
 
 
-var getArticles = function () {
-  for (var i = 1; i < numberOfPages - 1; i++) {
-    var pagename = $("#title" + i).html();
-    var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + pagename + "&count=3&offset=0&mkt=en-us&safeSearch=Moderate&freshness=day";
+var getArticles = function (title) {
+    var url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + title + "&count=3&mkt=en-us&safeSearch=Moderate";
 
     $.ajax({
     	type: 'GET',
@@ -182,5 +181,4 @@ var getArticles = function () {
         }
     	}
     });
-  }
 };
